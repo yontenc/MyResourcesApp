@@ -34,6 +34,7 @@ namespace MyResourcesApp.Controllers
                 _db.Add(cus);
                 await _db.SaveChangesAsync();
                 return RedirectToAction("RegisterCustomer");
+              
             }
             return View(cus);
         }
