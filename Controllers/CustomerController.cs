@@ -71,6 +71,7 @@ namespace MyResourcesApp.Controllers
                 return RedirectToAction("RegisterCustomer");
             }
             var viewCustomerDetails = await _db.customer.FindAsync(cid);
+            string[] line = { "en", "ten" };
             return View(viewCustomerDetails);
         }
 
