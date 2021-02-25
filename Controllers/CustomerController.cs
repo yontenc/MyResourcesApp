@@ -31,9 +31,21 @@ namespace MyResourcesApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Add(cus);
-                await _db.SaveChangesAsync();
-                return RedirectToAction("RegisterCustomer");
+                var customerInfo = _db.customer.Find(cus.CID);
+                if (customerInfo.CID != null)
+                {
+                    return View("Error_IdExists");
+
+              //      throw new ArgumentException(
+              //$"Cid already exists for: {customerInfo.CID}.", nameof(customerInfo.CID));
+                }
+                else
+                {
+                    _db.Add(cus);
+                    await _db.SaveChangesAsync();
+                    return RedirectToAction("RegisterCustomer");
+                }
+               
               
             }
             return View(cus);
