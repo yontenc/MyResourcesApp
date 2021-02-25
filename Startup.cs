@@ -53,7 +53,7 @@ namespace MyResourcesApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Customer}/{action=RegisterCustomer}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
