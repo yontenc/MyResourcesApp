@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MyResourcesApp.Models.Site>
+
+@{
+    ViewData["Title"] = "Register Site";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="EnterNewSite">Enter New Site</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SiteID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            using (Html.BeginForm("DeleteSiteInfo", "Site", new { siteId = item.SiteID }))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SiteID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SiteName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Distance)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditSiteInfo", new { siteId = item.SiteID }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Details", "ViewSiteInfo", new { siteId = item.SiteID }, new { @class = "btn btn-primary" }) |
+                        <input type="submit" value="Delete" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete site recode with ID= @item.SiteID')" />
+                        @*@Html.ActionLink("Delete", "DeleteSiteInfo", new { siteId=item.SiteID },new { @class = "btn btn-primary" })*@
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
