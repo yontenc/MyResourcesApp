@@ -32,9 +32,20 @@ namespace MyResourcesApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Add(site);
-                await _db.SaveChangesAsync();
-                return RedirectToAction("RegisterSite");
+                var siteInfo = _db.customer.Find(site.CustomerID,site.SiteName);
+                if(siteInfo != null)
+                {
+                    ViewData["ID"] = site.CustomerID;
+                    ViewBag.Name = site.SiteName;
+                    return View("Error_IdExists");
+                }
+                else {
+                    _db.Add(site);
+                    await _db.SaveChangesAsync();
+                    return RedirectToAction("RegisterSite");
+                }
+
+              
             }
             return View(site);
         }
