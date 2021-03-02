@@ -1,0 +1,18 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "ID already Exists";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h3>CID = @ViewBag.CID is already exists, Try inserting different id and save.</h3>
+<div>
+    @Html.ActionLink("Ok", "EnterNewCustomer", new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Cancel", "RegisterCustomer", new { @class = "btn btn-primary" }) |
+</div>
+@*@if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }*@
