@@ -34,6 +34,7 @@ namespace MyResourcesApp.Controllers
                 var customerInfo = _db.customer.Find(cus.CID);
                 if (customerInfo.CID != null)
                 {
+                    ViewBag.CID = customerInfo.CID;
                     return View("Error_IdExists");
 
               //      throw new ArgumentException(
