@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
+using Amazon.DynamoDBv2;
 
 namespace MyResourcesApp.Controllers
 {
@@ -32,12 +33,21 @@ namespace MyResourcesApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var siteInfo = _db.customer.Find(site.CustomerID,site.SiteName);
-                if(siteInfo != null)
+                //var dbEntry = _db.siteInfo.FirstOrDefault(acc => acc.CustomerID == site.CustomerID);
+
+                var myUser = _db.siteInfo.SingleOrDefault(user => user.SiteName == site.SiteName && user.CustomerID == site.CustomerID);
+                //Func<Site, bool> expression = g => g.CustomerID == site.CustomerID &&
+                //                              g.SiteName == site.SiteName;
+                //var myUser = _db.siteInfo.SingleOrDefault(expression);
+
+                //geoLocation.FirstOrDefault(g => g.Longitude != null && g.Latitude != null);
+
+
+                if (myUser?.SiteName == site.SiteName)
                 {
-                    ViewData["ID"] = site.CustomerID;
-                    ViewBag.Name = site.SiteName;
-                    return View("Error_IdExists");
+                    ViewBag.CustomerID = site.CustomerID;
+                    ViewBag.SiteName = site.SiteName;
+                    return View("Site_IdExists");
                 }
                 else {
                     _db.Add(site);
