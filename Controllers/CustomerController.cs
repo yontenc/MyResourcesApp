@@ -4,21 +4,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
+using Microsoft.Extensions.Logging;
 
 namespace MyResourcesApp.Controllers
 {
     public class CustomerController : Controller
     {
         private readonly ApplicationContext _db;
+        private readonly ILogger<CustomerController> _logger;
 
-        public CustomerController(ApplicationContext db)
+
+        public CustomerController(ApplicationContext db , ILogger<CustomerController> logger)
         {
             _db = db;
+            _logger = logger;
         }
         public IActionResult RegisterCustomer()
         {
+            _logger.LogDebug("Getting Customer Info");
             var customerInfoList = _db.customer.ToList();
             return View(customerInfoList);
+
         }
 
         public IActionResult EnterNewCustomer()
@@ -32,10 +38,10 @@ namespace MyResourcesApp.Controllers
             if (ModelState.IsValid)
             {
                 var customerInfo = _db.customer.Find(cus.CID);
-                if (customerInfo.CID != null)
+                if (customerInfo?.CID != null)
                 {
                     ViewBag.CID = customerInfo.CID;
-                    return View("Error_IdExists");
+                    return View("Customer_IdExists");
 
               //      throw new ArgumentException(
               //$"Cid already exists for: {customerInfo.CID}.", nameof(customerInfo.CID));
@@ -76,13 +82,15 @@ namespace MyResourcesApp.Controllers
             return View(customer);
         }
 
-        public async Task<IActionResult> ViewCustomerInfo(String cid)
+        public async Task<IActionResult> ViewCustomerInfo(String? cid)
         {
 
             if (cid == null || cid.Equals(""))
             {
+               
                 return RedirectToAction("RegisterCustomer");
             }
+            _logger.LogWarning("Customer with:" + cid + "does not exists");
             var viewCustomerDetails = await _db.customer.FindAsync(cid);
             return View(viewCustomerDetails);
         }
