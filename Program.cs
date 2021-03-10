@@ -20,6 +20,7 @@ namespace MyResourcesApp
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    //webBuilder.ConfigureLogging(loggingBuilder => loggingBuilder.AddConsole())};
                     webBuilder.UseStartup<Startup>();
                 });
     }
