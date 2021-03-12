@@ -18,5 +18,7 @@ namespace MyResourcesApp.Models
         public DbSet<Customer> customer { get; set; }
 
         public DbSet<Site> siteInfo { get; set; }
+
+        public DbSet<Product> product { get; set; }
     }
 }
