@@ -20,5 +20,8 @@ namespace MyResourcesApp.Models
         public DbSet<Site> siteInfo { get; set; }
 
         public DbSet<Product> product { get; set; }
+
+        public DbSet<DepositAdance> advanceDeposit { get; set; }
+        public DbSet<DepositAdvanceHistory> depositAdvanceHistory { get; set; }
     }
 }
