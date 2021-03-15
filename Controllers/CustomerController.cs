@@ -99,10 +99,42 @@ namespace MyResourcesApp.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteCustomerInfo(String cid)
         {
-            var viewCustomerDetails = await _db.customer.FindAsync(cid);
-            _db.customer.Remove(viewCustomerDetails);
-            await _db.SaveChangesAsync();
-            TempData["message"] = cid + " was deleted";
+            // Find the customer by name
+            var customer = await _db.customer.FindAsync(cid);
+
+            // Get the customers sites
+            var sites = from s in _db.siteInfo
+                         where s.CustomerID == cid
+                         select s;
+            //Get the Customer Advance deposites
+            var advanceDeposits = from ad in _db.advanceDeposit
+                        where ad.CustomerCID == cid
+                        select ad;
+
+            if (sites.ToList().Count != 0 || advanceDeposits.ToList().Count != 0)
+            {
+               
+                if (sites.ToList().Count > 0 && advanceDeposits.ToList().Count == 0)
+                {
+                    ViewBag.ScreenName = "Site Registration";
+                }
+                else if(advanceDeposits.ToList().Count > 0 && sites.ToList().Count == 0) {
+                    ViewBag.ScreenName = "Deposit Advance";
+                }
+                else
+                {
+                    ViewBag.ScreenName = "Site Registration And Deposit Advance";
+                }
+                ViewBag.CustomerID = cid;
+                return View("ForeignKeyConstriant");
+            }
+            else {
+              
+                _db.customer.Remove(customer);
+                await _db.SaveChangesAsync();
+            }
+           
+          
             return RedirectToAction("RegisterCustomer");
         }
 
