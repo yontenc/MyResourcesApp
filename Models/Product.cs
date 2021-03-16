@@ -10,13 +10,16 @@ namespace MyResourcesApp.Models
     {
         [Key]
         [Required(ErrorMessage = "Product name is required")]
-        public String productName { get; set; }
+        public string productName { get; set; }
+       // public string productSearch { get; set; }
 
         [Required(ErrorMessage = "Price per unit is required")]
         public decimal PricePerUnit { set; get; }
 
         [Required(ErrorMessage = "Transport rate is required")]
         public decimal TransportRate { set; get; }
+       
     }
+    
 }
 

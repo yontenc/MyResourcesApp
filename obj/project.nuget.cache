@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NGx204SpDjccvfPnzhRNIsacIwmP9J3qZMbj81Lo7RAuZssEXXtjOkrrZ9c9j68suxDHoo99ipjWhdwyggqGSA==",
+  "dgSpecHash": "U7nll3xDwDvdflmsm+BQpYQ9ROpRR7LW5G2+LpopkIw44Y5UEdXgUhoTr8n13DQ+Rw2yb15QG0ee2I3sMuEirQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\MyResourcesApp.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\MyResourcesApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

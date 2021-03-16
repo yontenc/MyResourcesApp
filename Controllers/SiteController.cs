@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
-using Amazon.DynamoDBv2;
+//using Amazon.DynamoDBv2;
 
 namespace MyResourcesApp.Controllers
 {

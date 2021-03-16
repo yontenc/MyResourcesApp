@@ -5,11 +5,24 @@
 }
 
 <h1>@ViewData["Title"]</h1>
+@*<form class="flex-wrap">
+    <div class="searchTerm">
+        <input value="@ViewData["GetDetails"]" name="productSearch" type="text" class ="search" placeholder="Search Product"/>
+        
+         <button class="btn btn-info">Search</button>
+    </div>
+</form>*@
 
 <p>
-    <a asp-action="Create">Enter New Product</a>
+    <a class="btn btn-primary my-1" asp-action="Create" role="button"><i class="fas fa-plus mr-1"></i>Add New Product</a>
+   
 </p>
-<table class="table">
+    
+
+   @* <div class="col-sm-4">
+        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New product</button>
+    </div>*@
+<table class="table table-hover">
     <thead>
         <tr>
             <th>
