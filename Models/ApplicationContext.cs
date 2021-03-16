@@ -23,5 +23,6 @@ namespace MyResourcesApp.Models
 
         public DbSet<DepositAdance> advanceDeposit { get; set; }
         public DbSet<DepositAdvanceHistory> depositAdvanceHistory { get; set; }
+        public DbSet<PlaceOrder> orders { get; set; }
     }
 }

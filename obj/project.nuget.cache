@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NGx204SpDjccvfPnzhRNIsacIwmP9J3qZMbj81Lo7RAuZssEXXtjOkrrZ9c9j68suxDHoo99ipjWhdwyggqGSA==",
+  "dgSpecHash": "zX4NON6X9uqX8NT7RtwJQaHAJyLynNsoQBranNhcSz7i+P63Vtmrmg/RJSqz5yNCkfAunvKZ/mW3+/S7No4H5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\MyResourcesApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\awssdk.core\\3.5.3.3\\awssdk.core.3.5.3.3.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\awssdk.dynamodbv2\\3.5.4.32\\awssdk.dynamodbv2.3.5.4.32.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
