@@ -40,6 +40,22 @@ namespace MyResourcesApp.Migrations
                     b.ToTable("customer");
                 });
 
+            modelBuilder.Entity("MyResourcesApp.Models.DepositAdance", b =>
+                {
+                    b.Property<string>("CustomerCID")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("CustomerCID");
+
+                    b.ToTable("advanceDeposit");
+                });
+
             modelBuilder.Entity("MyResourcesApp.Models.Product", b =>
                 {
                     b.Property<string>("productName")

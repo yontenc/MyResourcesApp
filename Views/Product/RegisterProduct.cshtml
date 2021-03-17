@@ -38,7 +38,10 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
+    using (Html.BeginForm("DeleteProductInfo", "Product", new { productName = item.productName }))
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.productName)
@@ -50,11 +53,13 @@
                 @Html.DisplayFor(modelItem => item.TransportRate)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "EditProductInfo", new { productName = item.productName }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Details", "ViewProductInfo", new { productName = item.productName }, new { @class = "btn btn-primary" }) |
+                <input type="submit" value="Delete" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete product recorde with ID= @item.productName')" />
+                @*@Html.ActionLink("Delete", "DeleteCustomerInfo", new {cid = item.CID, n=1 }, new { @class = "btn btn-primary" })*@
             </td>
         </tr>
+    }
 }
     </tbody>
 </table>

@@ -127,11 +127,11 @@ C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\RegisterCustomer.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csprojAssemblyReference.cache
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\RegisterSite.cshtml.g.cs
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\EnterNewCustomer.cshtml.g.cs
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\EditCustomerInfo.cshtml.g.cs
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\ViewCustomerInfo.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.AssemblyInfoInputs.cache
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.AssemblyInfo.cs
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csproj.CoreCompileInputs.cache
@@ -271,3 +271,25 @@ C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyRe
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csproj.CopyComplete
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.genruntimeconfig.cache
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csprojAssemblyReference.cache
+=======
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\EnterNewSite.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\EditSiteInfo.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\ViewSiteInfo.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\AWSSDK.DynamoDBv2.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Customer_IdExists.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Site_IdExists.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\RegisterProduct.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Product_Exists.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\EnterNewProduct.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\EditProductInfo.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\ViewProductInfo.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\DepositAdvance.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\EnterNewDepositAdvance.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\EditDepositAdvanceInfo.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\ViewDepositAdvanceInfo.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ForeignKeyConstriant.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\DoesNotExists_ID.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\ViewPlaceOrder.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csprojAssemblyReference.cache
+>>>>>>> 50ccd490f88527f44c498bcbc8660f1f145456d3

@@ -8,7 +8,14 @@
       "TRACE",
       "DEBUG",
       "NETCOREAPP",
-      "NETCOREAPP3_1"
+      "NETCOREAPP3_1",
+      "NETCOREAPP1_0_OR_GREATER",
+      "NETCOREAPP1_1_OR_GREATER",
+      "NETCOREAPP2_0_OR_GREATER",
+      "NETCOREAPP2_1_OR_GREATER",
+      "NETCOREAPP2_2_OR_GREATER",
+      "NETCOREAPP3_0_OR_GREATER",
+      "NETCOREAPP3_1_OR_GREATER"
     ],
     "languageVersion": "8.0",
     "platform": "",
@@ -24,6 +31,7 @@
     ".NETCoreApp,Version=v3.1": {
       "MyResourcesApp/1.0.0": {
         "dependencies": {
+          "AWSSDK.DynamoDBv2": "3.5.4.32",
           "Microsoft.EntityFrameworkCore": "5.0.3",
           "Microsoft.EntityFrameworkCore.Design": "5.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.3",
@@ -306,6 +314,31 @@
         },
         "compile": {
           "MyResourcesApp.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.5.3.3": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.5.3.3"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.DynamoDBv2/3.5.4.32": {
+        "dependencies": {
+          "AWSSDK.Core": "3.5.3.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.5.4.32"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -3405,6 +3438,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/3.5.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J5p51atBfFkUUS+fe9NQxqsrQeC1wX9TE+xf7YbNu6/I0YkSmotic57BbwFSuTyewge10JwAr7koaEPNn6o4aQ==",
+      "path": "awssdk.core/3.5.3.3",
+      "hashPath": "awssdk.core.3.5.3.3.nupkg.sha512"
+    },
+    "AWSSDK.DynamoDBv2/3.5.4.32": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2AseYMSOr0PNKD+ChDw8JiQaIvzq+ajJdiCiYkRKWuk6KtstFXcDnCPtmEDFKgsXwhbNr/Ox1RwGYna4qOnX5g==",
+      "path": "awssdk.dynamodbv2/3.5.4.32",
+      "hashPath": "awssdk.dynamodbv2.3.5.4.32.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

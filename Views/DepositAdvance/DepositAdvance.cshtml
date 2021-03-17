@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MyResourcesApp.Models.DepositAdance>
+
+@{
+    ViewData["Title"] = "Deposit Advance";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="EnterNewDepositAdvance">Deposit Advance</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    using (Html.BeginForm("DeleteAdvanceDepositInfo", "DepositAdvance", new { customerCID = item.CustomerCID }))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "EditDepositAdvanceInfo", new { customerCID = item.CustomerCID }, new { @class = "btn btn-primary" }) |*@
+                @Html.ActionLink("Details", "ViewDepositAdvanceInfo", new { customerCID = item.CustomerCID }, new { @class = "btn btn-primary" }) |
+                <input type="submit" value="Delete" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete deposit advance recorde with ID= @item.CustomerCID')" />
+
+            </td>
+        </tr>
+    }
+}
+    </tbody>
+</table>
