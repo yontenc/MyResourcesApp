@@ -11,8 +11,7 @@ namespace MyResourcesApp.Models
         [Key]
         [Required(ErrorMessage = "Product name is required")]
         public string productName { get; set; }
-       // public string productSearch { get; set; }
-
+      
         [Required(ErrorMessage = "Price per unit is required")]
         public decimal PricePerUnit { set; get; }
 
