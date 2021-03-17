@@ -293,3 +293,12 @@ C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\ViewPlaceOrder.cshtml.g.cs
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csprojAssemblyReference.cache
 >>>>>>> 50ccd490f88527f44c498bcbc8660f1f145456d3
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\AWSSDK.DynamoDBv2.dll
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\DepositAdvance.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\EditDepositAdvanceInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\EnterNewDepositAdvance.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\ViewDepositAdvanceInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\EditProductInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\EnterNewProduct.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\ViewProductInfo.cshtml.g.cs
