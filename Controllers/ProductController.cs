@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyResourcesApp.Controllers
 {
@@ -15,7 +16,7 @@ namespace MyResourcesApp.Controllers
         public ProductController(ApplicationContext db)
         {
             _db = db;
-            int c = 10;
+            
         }
         //site inforamtion
         public IActionResult RegisterProduct()
@@ -23,10 +24,22 @@ namespace MyResourcesApp.Controllers
             var productInfoList = _db.product.ToList();
             return View(productInfoList);
         }
+        
 
         public IActionResult EnterNewProduct()
         {
             return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> RegisterProduct(string productSearch)
+        {
+            ViewData["GetDetails"] = productSearch;
+            var query = from x in _db.product select x;
+            if (!string.IsNullOrEmpty(productSearch))
+            {
+                query = query.Where(x => x.productName.Contains(productSearch));
+            }
+            return View(await query.AsNoTracking().ToListAsync());
         }
 
         [HttpPost]
@@ -97,7 +110,7 @@ namespace MyResourcesApp.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("RegisterProduct");
         }
-
+        
     }
 }
 
