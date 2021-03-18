@@ -1,12 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "aMpvd+LZgDbQdQ6ooubEFBMyyqSZO227k+W+15qzFcrAdzl9NZR0E5lDygLjXZOt+i3L+AbKmklXEpffxiNTCQ==",
-=======
-  "dgSpecHash": "5t2x/R/OprN57XgyL+MDsgEmPBkCwTD4lIXwYWaLT1TKk53pyHCIrc8OZUX0zBTW+00yujNLvfj2CtLIlNozBA==",
->>>>>>> refs/remotes/origin/master
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\MyResourcesApp.csproj",
+  "projectFilePath": "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\MyResourcesApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\awssdk.core\\3.5.3.3\\awssdk.core.3.5.3.3.nupkg.sha512",
@@ -138,12 +134,5 @@
     "C:\\Users\\USER\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
