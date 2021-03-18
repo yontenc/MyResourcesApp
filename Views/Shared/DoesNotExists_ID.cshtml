@@ -1,0 +1,13 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "ID Does Not Exists";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h3>Customer ID = "@ViewBag.CustomerID"  is Not registered as Customer, Try Registering.</h3>
+<div>
+    @*@Html.ActionLink("Ok", "EnterNewCustomer", new { @class = "btn btn-primary" }) |*@
+    @Html.ActionLink("Ok", "EnterNewCustomer", "Customer", null, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Cancel", "DepositAdvance", new { @class = "btn btn-primary" }) |
+</div>

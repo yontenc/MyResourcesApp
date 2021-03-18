@@ -1,0 +1,152 @@
+﻿@model MyResourcesApp.Models.PlaceOrder
+
+@{
+    ViewData["Title"] = "ViewPlaceOrder";
+}
+
+<h1>ViewPlaceOrder</h1>
+
+<h4>PlaceOrder</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @*<form asp-action="ViewPlaceOrder" id="PlaceOrderForm">*@
+        <form  id="PlaceOrderForm" asp-action="ViewPlaceOrder">
+            <div asp-validation-summary="All" class="text-danger"></div>
+          
+            <div class="form-group">
+                <label asp-for="CID" class="control-label"></label>
+                <input asp-for="CID" class="form-control" id="CID" />
+                <span asp-validation-for="CID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Site Name</label>
+                <select class="form-control" id="SiteID" name="SiteID" asp-for="SiteID"
+                        asp-items="@(new SelectList(string.Empty, "SiteID", "SiteName"))"></select>
+                <span asp-validation-for="SiteID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="productName" class="control-label"></label>
+                <select asp-for="productName" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.ListOfProduct, "productName", "productName"))"></select>
+                <span asp-validation-for="productName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="OrderStatus" class="control-label"></label>
+            <input asp-for="OrderStatus" class="form-control" />
+            <span asp-validation-for="OrderStatus" class="text-danger"></span>
+        </div>*@
+
+            <div class="form-group">
+                <input type="button" id="btnCalculate" value="Calculate Order" class="btn btn-primary" />
+            </div>
+            <div class="form-group">
+                <label class="control-label"><p style="color:teal">Total Order Amount</p></label>
+                <input asp-for="PriceAmount" class="form-control" id="PriceAmount" name="PriceAmount" readonly />
+                @Html.ValidationMessageFor(model => model.PriceAmount, "", new { @class = "text-danger" })
+                <span asp-validation-for="PriceAmount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" id="btnsubmit" value="Place Order" class="btn btn-primary" />
+                <input type="reset" id="btnCancel" value="Cancel Order" class="btn btn-primary" />
+                <fieldset style="margin-left:400px; width:400px;">
+                    <legend>Required Amount Details</legend>
+                    <p>
+                        @*<span asp-validation-for="PriceAmount" class="text-danger"></span>*@
+                        @*@Html.ValidationSummary("false", "", new { @class = "text-danger" });*@
+                        @Html.ValidationSummary(true)
+                        @Html.ValidationMessage("PriceAmount")
+                        @Html.ValidationMessageFor(model => model.PriceAmount, "", new { @class = "text-danger" })
+                    </p>
+
+                    <p>
+
+                        Advance Balance:  Nu. @ViewBag.BalanceAmt
+                    </p>
+                    <p>
+
+                        Required Amount:  Nu. @ViewBag.RequiredAmt
+                    </p>
+                    <input class="form-control" id="msg" name="msg" readonly />
+                </fieldset>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script type="text/javascript">
+    $(document).ready(function () {
+        $('#CID').change(function () {
+            alert("hh")
+            var url = '@Url.Content("~/")' + "PlaceOrder/GetSite";
+            var ddlsource = "#CID";
+            $.getJSON(url, { CID: $(ddlsource).val() }, function (data) {
+                var items = '';
+                $('#SiteID').empty();
+                $.each(data, function (i, siteID) {
+                    items += "<option value='" + siteID.value + "'>" + siteID.text + "</option>";
+                });
+                $('#SiteID').html(items);
+            });
+        });
+
+    //    $("#btnsubmit").click(function (e) {
+    //        //Serialize the form datas.
+    //        var valdata = $("#PlaceOrderForm").serialize();
+    //        //to get alert popup
+    //        alert(valdata);
+    ///*        if ($("#PlaceOrderForm").valid()) {*/
+    //            // make the ajax call
+    //            $.ajax({
+    //                url: "/PlaceOrder/SaveOrder",
+    //                type: "POST",
+    //                dataType: 'json',
+    //                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    //                data: valdata,
+    //                  success: function (data) {
+    //                      var obj = e.get_object();
+    //                      alert(obj.Values); 
+    //                },
+    //                error: function (xhr, status, exception) {
+    //                    console.log("Error: " + exception + ", Status: " + status);
+    //                    //$("#errDiv").html(errorsString); 
+    //                    var obj = e.get_object();
+    //                    alert(obj.Values); 
+    //                }
+    //                // var obj = e.get_object();
+    //                //alert(obj.Values); 
+    //            });
+    //        //}
+
+        //});
+        $('#btnCalculate').click(function (e) {
+            //Serialize the form datas.
+            var valdata = $("#PlaceOrderForm").serialize();
+            var url = "/PlaceOrder/CalculateOrder";
+            $.get(url, valdata, function (data) {
+                $('#PriceAmount').val(data);
+            });
+        })
+
+    });
+        </script>
+
+    }
+}

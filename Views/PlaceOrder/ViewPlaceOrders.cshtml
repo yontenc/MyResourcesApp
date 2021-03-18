@@ -1,0 +1,104 @@
+﻿
+@model MyResourcesApp.Models.PlaceOrder
+
+@section Scripts{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#CID').change(function () {
+            var url = '@Url.Content("~/")' + "PlaceOrder/GetSite";
+            var ddlsource = "#CID";
+            $.getJSON(url, { CID: $(ddlsource).val() }, function (data) {
+                var items = '';
+                $('#SiteID').empty();
+                $.each(data, function (i, siteID) {
+                    items += "<option value='" + siteID.value + "'>" + siteID.text + "</option>";
+                });
+                $('#SiteID').html(items);
+            });
+        });
+
+        $("#btnsubmit").click(function (e) {
+            //Serialize the form datas.
+            var valdata = $("#PlaceOrderForm").serialize();
+            //to get alert popup
+            alert(valdata);
+            $.ajax({
+                url: "/PlaceOrder/SaveOrder",
+                type: "POST",
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: valdata
+            });
+        });
+
+    });
+    </script>
+}
+@{
+    @*<form asp-controller="PlaceOrder" asp-action="SaveOrder" method="post"
+        class="form-horizontal" role="form">*@
+    <form id="PlaceOrderForm">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <label asp-for="CID" class="control-label"></label>
+                    <input id="CID" type="text" name="CID" placeholder="Enter CID" />
+                </div>
+
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="row">
+                <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <label class="control-label">Site Name</label>
+                    <select class="form-control" id="SiteID" name="SiteID" asp-for="SiteID"
+                            asp-items="@(new SelectList(string.Empty, "SiteID", "SiteName"))"></select>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="row">
+                <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <label asp-for="productName" class="control-label"></label>
+                    <select asp-for="productName" class="form-control"
+                            asp-items="@(new SelectList(ViewBag.ListOfProduct, "productName", "productName"))"></select>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            <div class="row">
+                <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <label asp-for="Quantity" class="control-label"></label>
+                    <input id="Quantity" type="text" name="Quantity" placeholder="Enter Quantity" />
+                </div>
+
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <input id="btnsubmit" type="submit" value="Place Order" />
+
+                    <input id="Cancel" type="reset" value="Cancel Order" style="margin-left:30px;" />
+                </div>
+
+            </div>
+        </div>
+        <br />
+
+
+
+    </form>
+
+}
