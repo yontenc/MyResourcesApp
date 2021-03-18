@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zX4NON6X9uqX8NT7RtwJQaHAJyLynNsoQBranNhcSz7i+P63Vtmrmg/RJSqz5yNCkfAunvKZ/mW3+/S7No4H5Q==",
+  "dgSpecHash": "aMpvd+LZgDbQdQ6ooubEFBMyyqSZO227k+W+15qzFcrAdzl9NZR0E5lDygLjXZOt+i3L+AbKmklXEpffxiNTCQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\MyResourcesApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\awssdk.core\\3.5.3.3\\awssdk.core.3.5.3.3.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\awssdk.dynamodbv2\\3.5.4.32\\awssdk.dynamodbv2.3.5.4.32.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -99,7 +100,7 @@
     "C:\\Users\\USER\\.nuget\\packages\\system.net.sockets\\4.3.0\\system.net.sockets.4.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",

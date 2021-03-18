@@ -149,5 +149,9 @@ C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\ViewDepositAdvanceInfo.cshtml.g.cs
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ForeignKeyConstriant.cshtml.g.cs
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\DoesNotExists_ID.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\RequiredAmountInfo.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\ViewPlaceOrders.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\OrderDetails.cshtml.g.cs
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\ViewPlaceOrder.cshtml.g.cs
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csprojAssemblyReference.cache
