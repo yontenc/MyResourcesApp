@@ -11,7 +11,8 @@ namespace MyResourcesApp.Models
         [Key]
         [Required(ErrorMessage = "Site id is required")]
         public int DepositeID { set; get; }
-        
+
+        [Required(ErrorMessage = "time id is required")]
         public DateTime DepositTime { set; get; }
         public decimal DepositAmount { set; get; }
         public decimal BalanceAmount { set; get; }
