@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MyResourcesApp.Models.PlaceOrder>
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="ViewPlaceOrder">Place New Order</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiteID)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.TransportAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdvanceBalance)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.PriceAmount)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatusID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.TransportAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdvanceBalance)
+            </td>*@
+            @*<td>
+                Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatusID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit Order", "EditCustomerInfo", new { cid = item.CID }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Generate Report", "GenerateReport", new { cid = item.CID, productName = item.productName }, new { @class = "btn btn-primary" }) |
+                <input type="submit" value="Cancel Order" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete site recode with ID= @item.CID')" />
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

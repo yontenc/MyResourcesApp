@@ -17,7 +17,7 @@ namespace MyResourcesApp.Controllers
         }
         public IActionResult DepositAdvance()
         {
-            var advanceDepositList = _db.advanceDeposit.ToList();
+            var advanceDepositList = _db.advance.ToList();
             return View(advanceDepositList);
         }
 
@@ -42,12 +42,12 @@ namespace MyResourcesApp.Controllers
                     return View("DoesNotExists_ID");
                 }
 
-                var depositAdvanceInfo = _db.advanceDeposit.SingleOrDefault(p => p.CustomerCID == depositAdance.CustomerCID);
+                var depositAdvanceInfo = _db.advance.SingleOrDefault(p => p.CustomerCID == depositAdance.CustomerCID);
 
                 if (depositAdvanceInfo?.CustomerCID == depositAdance.CustomerCID)
                 {
                    
-                    var getDepositAdvanceDetails = await _db.advanceDeposit.FindAsync(depositAdance.CustomerCID);
+                    var getDepositAdvanceDetails = await _db.advance.FindAsync(depositAdance.CustomerCID);
                     getDepositAdvanceDetails.CustomerCID = depositAdance.CustomerCID;
                     getDepositAdvanceDetails.Amount = depositAdance.Amount;
                     getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance + depositAdance.Amount;
@@ -69,7 +69,7 @@ namespace MyResourcesApp.Controllers
             depositAdvanceHistory.DepositAmount = depositAdance.Amount;
             depositAdvanceHistory.BalanceAmount = depositAdvanceHistory.BalanceAmount;
             depositAdvanceHistory.DepositTime = new DateTime();
-            _db.depositAdvanceHistory.Add(depositAdvanceHistory);
+            _db.advancehistory.Add(depositAdvanceHistory);
             await _db.SaveChangesAsync();
 
             return View(depositAdance);
@@ -82,7 +82,7 @@ namespace MyResourcesApp.Controllers
                 return RedirectToAction("DepositAdvance");
             }
 
-            var getDepositAdvanceDetails = await _db.advanceDeposit.FindAsync(customerCID);
+            var getDepositAdvanceDetails = await _db.advance.FindAsync(customerCID);
             return View(getDepositAdvanceDetails);
         }
 
@@ -91,7 +91,7 @@ namespace MyResourcesApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var getDepositAdvanceDetails = _db.advanceDeposit.SingleOrDefault(p => p.CustomerCID == depositAdance.CustomerCID);
+                var getDepositAdvanceDetails = _db.advance.SingleOrDefault(p => p.CustomerCID == depositAdance.CustomerCID);
     
                 getDepositAdvanceDetails.CustomerCID = depositAdance.CustomerCID;
               
@@ -123,7 +123,7 @@ namespace MyResourcesApp.Controllers
             {
                 return RedirectToAction("DepositAdvance");
             }
-            var getDepositAdvanceDetails = await _db.advanceDeposit.FindAsync(customerCID);
+            var getDepositAdvanceDetails = await _db.advance.FindAsync(customerCID);
             return View(getDepositAdvanceDetails);
         }
 
@@ -131,8 +131,8 @@ namespace MyResourcesApp.Controllers
         public async Task<IActionResult> DeleteAdvanceDepositInfo(String customerCID)
         {
 
-            var getAdvanceDepositDetails = await _db.advanceDeposit.FindAsync(customerCID);
-            _db.advanceDeposit.Remove(getAdvanceDepositDetails);
+            var getAdvanceDepositDetails = await _db.advance.FindAsync(customerCID);
+            _db.advance.Remove(getAdvanceDepositDetails);
             await _db.SaveChangesAsync();
             return RedirectToAction("DepositAdvance");
         }

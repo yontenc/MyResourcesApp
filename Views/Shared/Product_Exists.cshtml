@@ -1,0 +1,15 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "ID already Exists";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h3>Product Name = "@ViewBag.productName" is already exists, Try inserting different values and save.</h3>
+<div>
+    @Html.ActionLink("Ok", "EnterNewProduct", new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Cancel", "RegisterProduct", new { @class = "btn btn-primary" }) |
+</div>

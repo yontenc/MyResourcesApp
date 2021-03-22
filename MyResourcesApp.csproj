@@ -7,9 +7,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.5.4.37" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.4">
+=======
+    <Compile Remove="Migrations\20210317055704_OrderTable_Added_StatusColumn.cs" />
+    <Compile Remove="Migrations\20210317055704_OrderTable_Added_StatusColumn.Designer.cs" />
+    <Compile Remove="Migrations\20210317060103_OrderTable_Added_StatusColumm_NotNull.cs" />
+    <Compile Remove="Migrations\20210317060103_OrderTable_Added_StatusColumm_NotNull.Designer.cs" />
+    <Compile Remove="Migrations\20210317060304_OrderTable_String_StatusColumm_NotNull.cs" />
+    <Compile Remove="Migrations\20210317060304_OrderTable_String_StatusColumm_NotNull.Designer.cs" />
+    <Compile Remove="Migrations\20210317083815_Column_Added.cs" />
+    <Compile Remove="Migrations\20210317083815_Column_Added.Designer.cs" />
+    <Compile Remove="Migrations\20210317084746_Column_Added.cs" />
+    <Compile Remove="Migrations\20210317084746_Column_Added.Designer.cs" />
+    <Compile Remove="Migrations\20210317090503_OrderTable_Status_added.cs" />
+    <Compile Remove="Migrations\20210317090503_OrderTable_Status_added.Designer.cs" />
+    <Compile Remove="Migrations\20210317090856_OrderTable_Status_added.cs" />
+    <Compile Remove="Migrations\20210317090856_OrderTable_Status_added.Designer.cs" />
+    <Compile Remove="Migrations\20210317091150_OrderTable_Status_addedString.cs" />
+    <Compile Remove="Migrations\20210317091150_OrderTable_Status_addedString.Designer.cs" />
+    <Compile Remove="Migrations\20210317091354_OrderTable_Status_addedString.cs" />
+    <Compile Remove="Migrations\20210317091354_OrderTable_Status_addedString.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.5.4.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.3">
+>>>>>>> 869305445963bf2b0ba4e942332bd3f7eba7da6a
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

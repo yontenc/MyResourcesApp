@@ -17,12 +17,13 @@ namespace MyResourcesApp.Models
 
         public DbSet<Customer> customer { get; set; }
 
-        public DbSet<Site> siteInfo { get; set; }
+        public DbSet<Site> site { get; set; }
 
         public DbSet<Product> product { get; set; }
 
-        public DbSet<DepositAdance> advanceDeposit { get; set; }
-        public DbSet<DepositAdvanceHistory> depositAdvanceHistory { get; set; }
-        public DbSet<PlaceOrder> orders { get; set; }
+        public DbSet<DepositAdance> advance { get; set; }
+        public DbSet<DepositAdvanceHistory> advancehistory { get; set; }
+
+        public DbSet<PlaceOrder> order { get; set; }
     }
 }

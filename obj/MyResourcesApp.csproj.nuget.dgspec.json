@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\MyResourcesApp.csproj": {}
+    "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\MyResourcesApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\MyResourcesApp.csproj": {
+    "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\MyResourcesApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\MyResourcesApp.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\MyResourcesApp.csproj",
         "projectName": "MyResourcesApp",
-        "projectPath": "C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\MyResourcesApp.csproj",
+        "projectPath": "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\MyResourcesApp.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\obj\\",
+        "outputPath": "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "AWSSDK.DynamoDBv2": {
               "target": "Package",
               "version": "[3.5.4.37, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -87,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

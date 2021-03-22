@@ -19,7 +19,7 @@ namespace MyResourcesApp.Controllers
         //site inforamtion
         public IActionResult RegisterSite()
         {
-            var siteInfoList = _db.siteInfo.ToList();
+            var siteInfoList = _db.site.ToList();
             return View(siteInfoList);
         }
 
@@ -35,7 +35,7 @@ namespace MyResourcesApp.Controllers
             {
                 //var dbEntry = _db.siteInfo.FirstOrDefault(acc => acc.CustomerID == site.CustomerID);
 
-                var myUser = _db.siteInfo.SingleOrDefault(user => user.SiteName == site.SiteName && user.CustomerID == site.CustomerID);
+                var myUser = _db.site.SingleOrDefault(user => user.SiteName == site.SiteName && user.CustomerID == site.CustomerID);
                 //Func<Site, bool> expression = g => g.CustomerID == site.CustomerID &&
                 //                              g.SiteName == site.SiteName;
                 //var myUser = _db.siteInfo.SingleOrDefault(expression);
@@ -66,7 +66,7 @@ namespace MyResourcesApp.Controllers
             {
                 return RedirectToAction("RegisterSite");
             }
-            var getSiteDetails = await _db.siteInfo.FindAsync(siteId);
+            var getSiteDetails = await _db.site.FindAsync(siteId);
             return View(getSiteDetails);
         }
 
@@ -89,7 +89,7 @@ namespace MyResourcesApp.Controllers
                 return RedirectToAction("SiteRegister");
             }
 
-            var getSiteDetails = await _db.siteInfo.FindAsync(siteId);
+            var getSiteDetails = await _db.site.FindAsync(siteId);
             return View(getSiteDetails);
         }
 
@@ -98,8 +98,8 @@ namespace MyResourcesApp.Controllers
         public async Task<IActionResult> DeleteSiteInfo(int siteId)
         {
 
-            var getSiteDetails = await _db.siteInfo.FindAsync(siteId);
-            _db.siteInfo.Remove(getSiteDetails);
+            var getSiteDetails = await _db.site.FindAsync(siteId);
+            _db.site.Remove(getSiteDetails);
             await _db.SaveChangesAsync();
             TempData["message"] = siteId + " was deleted";
             return RedirectToAction("RegisterSite");
