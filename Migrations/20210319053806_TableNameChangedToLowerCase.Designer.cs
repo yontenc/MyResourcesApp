@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyResourcesApp.Models;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -9,9 +10,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MyResourcesApp.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20210319053806_TableNameChangedToLowerCase")]
+    partial class TableNameChangedToLowerCase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +40,7 @@ namespace MyResourcesApp.Migrations
 
                     b.HasKey("CID");
 
-                    b.ToTable("customer");
+                    b.ToTable("Customer");
                 });
 
             modelBuilder.Entity("MyResourcesApp.Models.DepositAdance", b =>
@@ -54,7 +56,7 @@ namespace MyResourcesApp.Migrations
 
                     b.HasKey("CustomerCID");
 
-                    b.ToTable("advance");
+                    b.ToTable("Advance");
                 });
 
             modelBuilder.Entity("MyResourcesApp.Models.DepositAdvanceHistory", b =>
@@ -84,7 +86,7 @@ namespace MyResourcesApp.Migrations
 
                     b.HasKey("DepositeID");
 
-                    b.ToTable("advancehistory");
+                    b.ToTable("Advancehistory");
                 });
 
             modelBuilder.Entity("MyResourcesApp.Models.PlaceOrder", b =>
@@ -122,7 +124,7 @@ namespace MyResourcesApp.Migrations
 
                     b.HasKey("OrderID");
 
-                    b.ToTable("order");
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("MyResourcesApp.Models.Product", b =>
@@ -138,7 +140,7 @@ namespace MyResourcesApp.Migrations
 
                     b.HasKey("productName");
 
-                    b.ToTable("product");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("MyResourcesApp.Models.Site", b =>
@@ -161,7 +163,7 @@ namespace MyResourcesApp.Migrations
 
                     b.HasKey("SiteID");
 
-                    b.ToTable("site");
+                    b.ToTable("Site");
                 });
 #pragma warning restore 612, 618
         }

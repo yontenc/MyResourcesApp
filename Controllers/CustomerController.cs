@@ -103,11 +103,11 @@ namespace MyResourcesApp.Controllers
             var customer = await _db.customer.FindAsync(cid);
 
             // Get the customers sites
-            var sites = from s in _db.siteInfo
+            var sites = from s in _db.site
                          where s.CustomerID == cid
                          select s;
             //Get the Customer Advance deposites
-            var advanceDeposits = from ad in _db.advanceDeposit
+            var advanceDeposits = from ad in _db.advance
                         where ad.CustomerCID == cid
                         select ad;
 

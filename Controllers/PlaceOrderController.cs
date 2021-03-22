@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Enums;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyResourcesApp.Controllers
 {
@@ -29,7 +30,8 @@ namespace MyResourcesApp.Controllers
         public IActionResult OrderDetails()
         {
            
-            var orderInfoList = _db.orders.ToList();
+            var orderInfoList = _db.order.ToList();
+          
             return View(orderInfoList);
 
         }
@@ -49,7 +51,7 @@ namespace MyResourcesApp.Controllers
         {
         
             List<Site> siteList = new List<Site>();
-            siteList = (from s in _db.siteInfo
+            siteList = (from s in _db.site
                         where s.CustomerID == CID
                         select s).ToList();
             siteList.Insert(0, new Site { SiteID = 0, SiteName = "Select" });
@@ -65,7 +67,7 @@ namespace MyResourcesApp.Controllers
                            where p.productName == placeOrder.productName
                            select p).ToList();
             List<Site> siteList = new List<Site>();
-            siteList = (from s in _db.siteInfo
+            siteList = (from s in _db.site
                         where s.SiteID == placeOrder.SiteID && s.CustomerID == placeOrder.CID
                         select s).ToList();
             foreach (var productItem in productList)
@@ -84,7 +86,7 @@ namespace MyResourcesApp.Controllers
         private Decimal getBalanceAmt(String CID)
         {
             List<DepositAdance> depositAdancesList = new List<DepositAdance>();
-            depositAdancesList = (from da in _db.advanceDeposit
+            depositAdancesList = (from da in _db.advance
                            where da.CustomerCID ==CID
                            select da).ToList();
             foreach(var depositItem in depositAdancesList)
@@ -128,15 +130,15 @@ namespace MyResourcesApp.Controllers
                     //return View("OrderDetails","PlaceOrder");
                 }
                 //var orderInfo = _db.orders.Find(placeOrder.CID, placeOrder.productName);
-                var orderInfo = _db.orders.SingleOrDefault(user => user.CID == placeOrder.CID && user.productName == placeOrder.productName);
+                var orderInfo = _db.order.SingleOrDefault(user => user.CID == placeOrder.CID && user.productName == placeOrder.productName);
                 if (orderInfo != null)
                 {
                     //Update the advance balance
-                    var getDepositAdvanceDetails = await _db.advanceDeposit.FindAsync(placeOrder.CID);
+                    var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
                     getDepositAdvanceDetails.CustomerCID = placeOrder.CID;
                     getDepositAdvanceDetails.Amount = getDepositAdvanceDetails.Amount;
                     getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance - totalOrder;
-                    _db.advanceDeposit.Update(getDepositAdvanceDetails);
+                    _db.advance.Update(getDepositAdvanceDetails);
                     await _db.SaveChangesAsync();
 
                     //update order table
@@ -150,25 +152,26 @@ namespace MyResourcesApp.Controllers
                     orderInfo.TransportAmount = orderInfo.TransportAmount + (TransportRate * placeOrder.Quantity + Distance);
                     orderInfo.AdvanceBalance = getDepositAdvanceDetails.Balance;
                     //orderInfo.OrderStatus = (char)OrderStatus.Delivered;
-                    _db.orders.Update(orderInfo);
+                    _db.order.Update(orderInfo);
                     await _db.SaveChangesAsync();
                     return RedirectToAction("OrderDetails");
                 }
                 else
                 {
                     //Update the advance balance
-                    var getDepositAdvanceDetails = await _db.advanceDeposit.FindAsync(placeOrder.CID);
+                    var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
                     getDepositAdvanceDetails.CustomerCID = placeOrder.CID;
                     getDepositAdvanceDetails.Amount = getDepositAdvanceDetails.Amount;
                     getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance - totalOrder;
-                    _db.advanceDeposit.Update(getDepositAdvanceDetails);
+                    _db.advance.Update(getDepositAdvanceDetails);
                     await _db.SaveChangesAsync();
 
                     //save new record to orders table
                     placeOrder.PriceAmount = totalOrder;
                     placeOrder.TransportAmount = (TransportRate * placeOrder.Quantity + Distance);
                     placeOrder.AdvanceBalance = getDepositAdvanceDetails.Balance;
-                    _db.Add(placeOrder);
+                    placeOrder.OrderStatusID = (Char)OrderStatus.Delivered;
+                    _db.order.Add(placeOrder);
                     await _db.SaveChangesAsync();
                     return RedirectToAction("OrderDetails");
                 }
@@ -178,9 +181,19 @@ namespace MyResourcesApp.Controllers
             return View("PlaceOrder");
         }
 
-        private void LogException(Exception e)
+        public async Task<IActionResult> GenerateReport(String? cid, String? productName)
+        //public IActionResult GenerateReport(String? cid)
         {
-            throw new NotImplementedException();
+
+            if (cid == null || cid.Equals(""))
+            {
+
+               return RedirectToAction("OrderDetails");
+            }
+            var getOrderListDetails = await _db.order.Where(x => x.CID == cid &&  x.productName== productName).ToListAsync();
+            return View(getOrderListDetails);
         }
+
+     
     }
 }

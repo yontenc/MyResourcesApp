@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MyResourcesApp.Models
 {
-    public class PlaceOrder
+    public class PlaceOrderCustomer
     {
         [Key]
-        [Required(ErrorMessage = "Site id is required")]
-        public int OrderID { set; get; }
-
         [Required(ErrorMessage = "CID is required")]
         public String CID { get; set; }
 
@@ -27,10 +25,9 @@ namespace MyResourcesApp.Models
         [Required(ErrorMessage = "Quantity is required")]
         public int Quantity { get; set; }
         public decimal TransportAmount { set; get; }
-        public decimal AdvanceBalance { set; get; }
-        public decimal PriceAmount { set; get; }
+        public decimal AdvanceBalance{ set; get; }
+        public decimal PriceAmount{ set; get; }
 
-        public Char OrderStatusID { set; get; }
 
 
     }
