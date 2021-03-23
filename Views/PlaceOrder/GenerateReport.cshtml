@@ -3,93 +3,104 @@
 @{
     ViewData["Title"] = "Reports";
 }
-<h1>@ViewData["Title"]</h1>
-<br />
-<h3>Customer Wise Orders</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PriceAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdvanceBalance)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TransportAmount)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CID)
-            </td>
+@*<p>
+    @Html.ActionLink("Convert View To PDF", "PrintViewToPdf")
+</p>*@
+<div id="Grid">
+    <h1>@ViewData["Title"]</h1>
+    <br />
 
-            <td>
-                Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
-            </td>
-            <td>
-                Nu. @Html.DisplayFor(modelItem => item.AdvanceBalance)
-            </td>
-            <td>
-                Nu. @Html.DisplayFor(modelItem => item.TransportAmount)
-            </td>
-            @*<td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>*@
-        </tr>
+    <h3>Customer Wise Orders</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PriceAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AdvanceBalance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TransportAmount)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in (ViewBag.CustomerOrderDetails as IEnumerable<PlaceOrder>))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CID)
+                    </td>
+
+                    <td>
+                        Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
+                    </td>
+                    <td>
+                        Nu. @Html.DisplayFor(modelItem => item.AdvanceBalance)
+                    </td>
+                    <td>
+                        Nu. @Html.DisplayFor(modelItem => item.TransportAmount)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+    <h3>Product Wise Orders</h3>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.productName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PriceAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TransportAmount)
+                </th>
+
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in (ViewBag.CustomerProductDetails as IEnumerable<PlaceOrder>))
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productName)
+                    </td>
+                    <td>
+                        Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
+                    </td>
+                    <td>
+                        Nu. @Html.DisplayFor(modelItem => item.TransportAmount)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@using (Html.BeginForm("Export", "PlaceOrder", FormMethod.Post))
+{
+    <input type="hidden" name="GridHtml" />
+    <input type="submit" id="btnSubmit" value="Download To PDF" class="btn btn-secondary"/>
 }
-    </tbody>
-</table>
-
-<br />
-<h3>Product Wise Orders</h3>
-<table class="table">
-    <thead>
-        <tr>
-         
-            <th>
-                @Html.DisplayNameFor(model => model.productName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PriceAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TransportAmount)
-            </th>
-           
-            
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.productName)
-            </td>
-            <td>
-                Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
-            </td>
-            <td>
-                Nu. @Html.DisplayFor(modelItem => item.TransportAmount)
-            </td>
-            @*<td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>*@
-        </tr>
-        }
-    </tbody>
-</table>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+            $("input[name='GridHtml']").val($("#Grid").html());
+        });
+    });
+    $('#btnSubmit').css('background', 'green');
+</script>

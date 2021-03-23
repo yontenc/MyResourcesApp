@@ -74,7 +74,7 @@
                 @Html.DisplayFor(modelItem => item.OrderStatusID)
             </td>
             <td>
-                @Html.ActionLink("Edit Order", "EditCustomerInfo", new { cid = item.CID }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Edit Order", "EditCustomerInfo", new { cid = item.CID }, new { @class = "btn btn-primary not-active" }) |
                 @Html.ActionLink("Generate Report", "GenerateReport", new { cid = item.CID, productName = item.productName }, new { @class = "btn btn-primary" }) |
                 <input type="submit" value="Cancel Order" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete site recode with ID= @item.CID')" />
             </td>
