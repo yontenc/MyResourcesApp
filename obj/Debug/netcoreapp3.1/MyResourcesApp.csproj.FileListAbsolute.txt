@@ -8,7 +8,6 @@ C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.pdb
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.Views.dll
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.Views.pdb
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\AWSSDK.DynamoDBv2.dll
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Humanizer.dll
@@ -155,4 +154,13 @@ C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.pdb
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.genruntimeconfig.cache
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\GenerateReport.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\itextsharp.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\itextsharp.xmlworker.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Rotativa.dll

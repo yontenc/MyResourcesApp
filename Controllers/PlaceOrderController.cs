@@ -8,8 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Enums;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using AutoMapper;
+
 using Microsoft.EntityFrameworkCore;
+
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using iTextSharp.text.html.simpleparser;
+using Rotativa;
 
 namespace MyResourcesApp.Controllers
 {
@@ -22,6 +29,23 @@ namespace MyResourcesApp.Controllers
         private decimal TransportRate;
         private decimal Distance;
         private decimal Balance;
+
+        //region private method
+        private Decimal getBalanceAmt(String CID)
+        {
+            List<DepositAdance> depositAdancesList = new List<DepositAdance>();
+            depositAdancesList = (from da in _db.advance
+                                  where da.CustomerCID == CID
+                                  select da).ToList();
+            foreach (var depositItem in depositAdancesList)
+            {
+                Balance = depositItem.Balance;
+            }
+            return Balance;
+        }
+        //endregion
+
+        //region public method
         public PlaceOrderController(ApplicationContext db)
         {
             _db = db;
@@ -40,10 +64,11 @@ namespace MyResourcesApp.Controllers
             //TempData["TotalOrderAmt"] = 0;
             List<Product> productList = new List<Product>();
             productList = (from p in _db.product
-                        select p).ToList();
-            
+                           select p).ToList();
+
             productList.Insert(0, new Product { productName = "Select" });
             ViewBag.ListOfProduct = productList;
+            ViewBag.requiredDetails = TempData["Required"];
             return View();
         }
 
@@ -83,19 +108,7 @@ namespace MyResourcesApp.Controllers
             return totalOrder;
         }
 
-        private Decimal getBalanceAmt(String CID)
-        {
-            List<DepositAdance> depositAdancesList = new List<DepositAdance>();
-            depositAdancesList = (from da in _db.advance
-                           where da.CustomerCID ==CID
-                           select da).ToList();
-            foreach(var depositItem in depositAdancesList)
-            {
-                Balance = depositItem.Balance;
-            }
-            return Balance;
-        } 
-
+     
         public String GetRequiredAmountDetails()
         {
             decimal RequiredAmt = (totalOrder - Balance);
@@ -106,7 +119,7 @@ namespace MyResourcesApp.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> ViewPlaceOrder(PlaceOrder placeOrder)
+        public async Task<IActionResult> SaveOrder(PlaceOrder placeOrder)
         //public IActionResult SaveOrder(PlaceOrder placeOrder)
         {
          
@@ -119,14 +132,13 @@ namespace MyResourcesApp.Controllers
                     //TempData["TotalOrderAmt"] = totalOrder;
                     //TempData["BalanceAmt"] = Balance;
 
-                    TempData["RequiredAmt"] = (totalOrder - Balance);
-
-                    ModelState.AddModelError("CID",  totalOrder.ToString("0.00"));
-                          ModelState.AddModelError("PriceAmount",  totalOrder.ToString("0.00"));
-                          ModelState.AddModelError("SiteID",  totalOrder.ToString("0.00"));
-                    //var editMode = Mapper.Map<ProductDetails>(PrjEdit/*M*/ode);
-                    ModelState.AddModelError("PriceAmount", "Date must be current date or in the past.");
-                    return View(placeOrder);
+                    var requiredDetails = new List<string> {
+                                           "Total Order Amount:  Nu." + totalOrder,
+                                             "Advance Balance: Nu." + Balance,
+                                            "Required Amount: Nu."+(totalOrder-Balance)
+                                                };
+                    TempData["Required"] = requiredDetails;
+                    return RedirectToAction("ViewPlaceOrder");
                     //return View("OrderDetails","PlaceOrder");
                 }
                 //var orderInfo = _db.orders.Find(placeOrder.CID, placeOrder.productName);
@@ -190,10 +202,42 @@ namespace MyResourcesApp.Controllers
 
                return RedirectToAction("OrderDetails");
             }
-            var getOrderListDetails = await _db.order.Where(x => x.CID == cid &&  x.productName== productName).ToListAsync();
-            return View(getOrderListDetails);
+            Decimal advanceBalance = getBalanceAmt(cid);
+         var orderDetails = _db.order.Where(b => b.CID == cid)
+                             .GroupBy(b => b.CID)
+                             .Select(g => new PlaceOrder{
+                                 CID = cid,
+                                 PriceAmount = g.Sum(b => b.PriceAmount),
+                                 TransportAmount = g.Sum(b => b.TransportAmount),
+                                 AdvanceBalance = advanceBalance 
+                             }).FirstOrDefault();
+
+            List<PlaceOrder> getCustomerOrderList = new List<PlaceOrder>();
+            getCustomerOrderList.Add(orderDetails);
+            var getCustomerWiseProductDetails = await _db.order.Where(x => x.CID == cid).ToListAsync();
+            ViewBag.CustomerOrderDetails = getCustomerOrderList;
+            ViewBag.CustomerProductDetails = getCustomerWiseProductDetails;
+            return View();
         }
 
-     
+
+        [HttpPost]
+        //[ValidateInput(false)]
+        public FileResult Export(string GridHtml)
+        {
+            using (MemoryStream stream = new System.IO.MemoryStream())
+            {
+                StringReader sr = new StringReader(GridHtml);
+                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 100f, 0f);
+                PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                pdfDoc.Close();
+                return File(stream.ToArray(), "application/pdf", "Order_Report.pdf");
+            }
+        }
+    
     }
+
 }
+
