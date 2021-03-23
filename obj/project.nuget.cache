@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LfRUzNuGwO4vwHVqn8Xc70IIxo8qdciDkTbEzgpwyyDSF1iejblZU1uVt6D0pk3ivqo9taC1ukx8p18fI1DB/A==",
+  "dgSpecHash": "g5XAbFXPOrXC6+g2iPA+swjQdcU+1cYFi2/LSV4je5NqVQquz4SsbwJ6+1t6SAj9NRMpsAvBMuF0E2u/5g/Uxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\MyResourcesApp.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,9 @@
     "C:\\Users\\USER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\itextsharp\\5.3.3\\itextsharp.5.3.3.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\itextsharp.xmlworker\\1.2.0\\itextsharp.xmlworker.1.2.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.3\\microsoft.aspnet.mvc.5.2.3.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.3\\microsoft.aspnet.razor.3.2.3.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.3\\microsoft.aspnet.webpages.3.2.3.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.4\\microsoft.aspnetcore.cryptography.internal.5.0.4.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.4\\microsoft.aspnetcore.cryptography.keyderivation.5.0.4.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -52,12 +55,14 @@
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.templating\\3.1.0\\microsoft.visualstudio.web.codegeneration.templating.3.1.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\3.1.0\\microsoft.visualstudio.web.codegeneration.utils.3.1.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.0\\microsoft.visualstudio.web.codegenerators.mvc.3.1.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\npgsql\\5.0.2\\npgsql.5.0.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\5.0.2\\npgsql.entityframeworkcore.postgresql.5.0.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\rotativa\\1.7.3\\rotativa.1.7.3.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -158,6 +163,56 @@
       "warningLevel": 1,
       "message": "Package 'itextsharp.xmlworker 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "itextsharp.xmlworker",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Mvc 5.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Mvc",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Razor 3.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Razor",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.WebPages 3.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.WebPages",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Web.Infrastructure 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Web.Infrastructure",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Rotativa 1.7.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Rotativa",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
       ]
