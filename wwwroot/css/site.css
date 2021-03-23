@@ -73,7 +73,7 @@ body {
     width:10px;
     background-color:black;
 }
-<<<<<<< HEAD
+
 input[type=text] {
     width: 140px;
     
@@ -82,11 +82,10 @@ input[type=text] {
 }
 input[type=text]:focus {
     width: 100%;
-=======
-.not-active {
+
+.not-active{
     pointer-events: none;
     cursor: default;
     text-decoration: none;
     color: black;
->>>>>>> e03320bca174d101fb1ca123047f10af06d668b0
 }

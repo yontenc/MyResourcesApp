@@ -16,7 +16,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using iTextSharp.text.html.simpleparser;
-using Rotativa;
+//using Rotativa;
 
 namespace MyResourcesApp.Controllers
 {

@@ -42,7 +42,7 @@
           "dependencies": {
             "AWSSDK.DynamoDBv2": {
               "target": "Package",
-              "version": "[3.5.4.32, )"
+              "version": "[3.5.4.37, )"
             },
             "AutoMapper": {
               "target": "Package",
@@ -74,19 +74,15 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[3.1.0, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.2, )"
             },
-            "Rotativa": {
-              "target": "Package",
-              "version": "[1.7.3, )"
-            },
             "itextsharp.xmlworker": {
               "target": "Package",
-              "version": "[5.5.13.2, )"
+              "version": "[1.2.0, )"
             }
           },
           "imports": [
