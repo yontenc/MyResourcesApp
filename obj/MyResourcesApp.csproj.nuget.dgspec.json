@@ -44,7 +44,6 @@
               "target": "Package",
               "version": "[3.5.4.32, )"
             },
-<<<<<<< HEAD
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
@@ -53,8 +52,6 @@
               "target": "Package",
               "version": "[5.0.4, )"
             },
-=======
->>>>>>> e03320bca174d101fb1ca123047f10af06d668b0
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -75,6 +72,10 @@
               "target": "Package",
               "version": "[1.10.9, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -85,7 +86,7 @@
             },
             "itextsharp.xmlworker": {
               "target": "Package",
-              "version": "[1.2.0, )"
+              "version": "[5.5.13.2, )"
             }
           },
           "imports": [
