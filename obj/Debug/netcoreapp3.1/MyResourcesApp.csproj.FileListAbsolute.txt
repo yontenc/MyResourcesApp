@@ -241,3 +241,8 @@ C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyRe
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.Views.pdb
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csproj.CopyComplete
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.genruntimeconfig.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
