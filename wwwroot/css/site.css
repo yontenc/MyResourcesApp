@@ -73,7 +73,17 @@ body {
     width:10px;
     background-color:black;
 }
-.not-active {
+
+input[type=text] {
+    width: 140px;
+    
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+    width: 100%;
+
+.not-active{
     pointer-events: none;
     cursor: default;
     text-decoration: none;

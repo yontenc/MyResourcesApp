@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace MyResourcesApp
 {
@@ -26,7 +27,10 @@ namespace MyResourcesApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationContext>(options => options.UseNpgsql(Configuration.GetConnectionString("MyConnection")));
+
             services.AddControllersWithViews();
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +50,7 @@ namespace MyResourcesApp
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

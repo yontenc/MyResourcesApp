@@ -7,9 +7,9 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="ViewPlaceOrder">Place New Order</a>
+    <a class="btn btn-primary my-1" asp-action="ViewPlaceOrder" role="button"><i class="fas fa-plus mr-1"></i>Add New Order</a>
 </p>
-<table class="table">
+<table class="table table-hover" id="dataTable">
     <thead>
         <tr>
             <th>
@@ -74,7 +74,7 @@
                 @Html.DisplayFor(modelItem => item.OrderStatusID)
             </td>
             <td>
-                @Html.ActionLink("Edit Order", "EditCustomerInfo", new { cid = item.CID }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Edit Order", "EditCustomerInfo", new { cid = item.CID }, new { @class = "btn btn-primary not-active" }) |
                 @Html.ActionLink("Generate Report", "GenerateReport", new { cid = item.CID, productName = item.productName }, new { @class = "btn btn-primary" }) |
                 <input type="submit" value="Cancel Order" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete site recode with ID= @item.CID')" />
             </td>

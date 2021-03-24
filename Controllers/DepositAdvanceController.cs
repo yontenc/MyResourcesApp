@@ -23,7 +23,6 @@ namespace MyResourcesApp.Controllers
 
         public IActionResult EnterNewDepositAdvance()
         {
-          
             return View();
         }
 
@@ -54,7 +53,6 @@ namespace MyResourcesApp.Controllers
                     getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance + depositAdance.Amount;
                     _db.Update(getDepositAdvanceDetails);
                     await _db.SaveChangesAsync();
-                    TempData["Success"] = true;
                     return RedirectToAction("DepositAdvance");
                 }
                 else
@@ -62,7 +60,6 @@ namespace MyResourcesApp.Controllers
                     depositAdance.Balance = depositAdance.Amount;
                     _db.Add(depositAdance);
                     await _db.SaveChangesAsync();
-                    TempData["Success"] = true;
                     return RedirectToAction("DepositAdvance");
                 }
             }

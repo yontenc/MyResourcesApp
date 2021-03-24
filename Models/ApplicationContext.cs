@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MyResourcesApp.Models
 {
-    public class ApplicationContext :  DbContext
+    public class ApplicationContext : IdentityDbContext
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {

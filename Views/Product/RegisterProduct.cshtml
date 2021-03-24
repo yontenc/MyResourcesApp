@@ -6,20 +6,22 @@
 
 <h1>@ViewData["Title"]</h1>
 @*<form class="flex-wrap">
-    <div class="searchTerm">
-        <input value="@ViewData["GetDetails"]" name="productSearch" type="text" class ="search" placeholder="Search Product"/>
-        
-         <button class="btn btn-info">Search</button>
-    </div>
-</form>*@
+        <div class="searchTerm">
+            <input value="@ViewData["GetDetails"]" name="productSearch" type="text" class ="search" placeholder="Search Product"/>
+
+             <button class="btn btn-info">Search</button>
+        </div>
+    </form>*@
 
 <p>
+
     <a class="btn btn-primary my-1" asp-action="EnterNewProduct" role="button"><i class="fas fa-plus mr-1"></i>Add New Product</a>
    
-</p>
-    
 
-<table class="table table-hover">
+</p>
+
+
+<table class="table table-hover" id="dataTable">
     <thead>
         <tr>
             <th>
@@ -35,28 +37,31 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model)
-{
-    using (Html.BeginForm("DeleteProductInfo", "Product", new { productName = item.productName }))
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.productName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PricePerUnit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TransportRate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditProductInfo", new { productName = item.productName }, new { @class = "btn btn-primary" }) |
-                @Html.ActionLink("Details", "ViewProductInfo", new { productName = item.productName }, new { @class = "btn btn-primary" }) |
-                <input type="submit" value="Delete" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete product recorde with ID= @item.productName')" />
-                @*@Html.ActionLink("Delete", "DeleteCustomerInfo", new {cid = item.CID, n=1 }, new { @class = "btn btn-primary" })*@
-            </td>
-        </tr>
-    }
-}
+        @foreach (var item in Model)
+        {
+            using (Html.BeginForm("DeleteProductInfo", "Product", new { productName = item.productName }))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PricePerUnit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransportRate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditProductInfo", new { productName = item.productName }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Details", "ViewProductInfo", new { productName = item.productName }, new { @class = "btn btn-primary" }) |
+                        <input type="submit" value="Delete" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete product recorde with ID= @item.productName')" />
+                        @*@Html.ActionLink("Delete", "DeleteCustomerInfo", new {cid = item.CID, n=1 }, new { @class = "btn btn-primary" })*@
+                    </td>
+                </tr>
+            }
+        }
     </tbody>
+
 </table>
+
+

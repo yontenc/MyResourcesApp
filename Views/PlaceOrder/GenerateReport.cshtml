@@ -4,8 +4,8 @@
     ViewData["Title"] = "Reports";
 }
 @*<p>
-        @Html.ActionLink("Convert View To PDF", "PrintViewToPdf")
-    </p>*@
+    @Html.ActionLink("Convert View To PDF", "PrintViewToPdf")
+</p>*@
 <div id="Grid">
     <h1>@ViewData["Title"]</h1>
     <br />
@@ -61,9 +61,6 @@
                     @Html.DisplayNameFor(model => model.productName)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.SiteID)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.PriceAmount)
                 </th>
                 <th>
@@ -77,22 +74,18 @@
         <tbody>
             @foreach (var item in (ViewBag.CustomerProductDetails as IEnumerable<PlaceOrder>))
             {
-            <tr>
+                <tr>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.productName)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.SiteID)
-                </td>
-                <td>
-                    Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
-                </td>
-                <td>
-                    Nu. @Html.DisplayFor(modelItem => item.TransportAmount)
-                </td>
-            </tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.productName)
+                    </td>
+                    <td>
+                        Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
+                    </td>
+                    <td>
+                        Nu. @Html.DisplayFor(modelItem => item.TransportAmount)
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
@@ -100,8 +93,7 @@
 @using (Html.BeginForm("Export", "PlaceOrder", FormMethod.Post))
 {
     <input type="hidden" name="GridHtml" />
-    <input type="submit" id="btnSubmit" value="Download To PDF" class="btn btn-secondary" /> 
-    <a asp-action="OrderDetails">Back to List</a>
+    <input type="submit" id="btnSubmit" value="Download To PDF" class="btn btn-secondary"/>
 }
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script type="text/javascript">

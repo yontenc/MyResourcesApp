@@ -7,9 +7,10 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="EnterNewDepositAdvance">Deposit Advance</a>
+    <a class="btn btn-primary my-1" asp-action="EnterNewDepositAdvance" role="button"><i class="fas fa-plus mr-1"></i>Deposit Advance</a>
+    
 </p>
-<table class="table">
+<table class="table table-hover" id="dataTable">
     <thead>
         <tr>
             <th>
@@ -25,40 +26,28 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            using (Html.BeginForm("DeleteAdvanceDepositInfo", "DepositAdvance", new { customerCID = item.CustomerCID }))
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CustomerCID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Amount)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Balance)
-                    </td>
-                    <td>
-                        @*@Html.ActionLink("Edit", "EditDepositAdvanceInfo", new { customerCID = item.CustomerCID }, new { @class = "btn btn-primary" }) |*@
-                        @Html.ActionLink("Details", "ViewDepositAdvanceInfo", new { customerCID = item.CustomerCID }, new { @class = "btn btn-primary" }) |
-                        <input type="submit" value="Delete" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete deposit advance recorde with ID= @item.CustomerCID')" />
+@foreach (var item in Model)
+{
+    using (Html.BeginForm("DeleteAdvanceDepositInfo", "DepositAdvance", new { customerCID = item.CustomerCID }))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "EditDepositAdvanceInfo", new { customerCID = item.CustomerCID }, new { @class = "btn btn-primary" }) |*@
+                @Html.ActionLink("Details", "ViewDepositAdvanceInfo", new { customerCID = item.CustomerCID }, new { @class = "btn btn-primary" }) |
+                <input type="submit" value="Delete" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete deposit advance recorde with ID= @item.CustomerCID')" />
 
-                    </td>
-                </tr>
-            }
-        }
+            </td>
+        </tr>
+    }
+}
     </tbody>
 </table>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
-<script type="text/javascript">
-if ('@TempData["Success"]' == true)
-{
-    alert("Form successfully submitted");
-    // handle refreshing the view, or redirect to another View (window.location.href = "")
-}
-</script>
-}

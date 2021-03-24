@@ -58,16 +58,6 @@ namespace MyResourcesApp.Controllers
           
             return View(orderInfoList);
 
-        } 
-        public IActionResult GetPendingOrders()
-        {
-           
-            //var orderInfoList = _db.order.ToList();
-          var pendingOrderList = (from o in _db.order
-                        where o.OrderStatusID == (char)OrderStatus.Pending
-                        select 0).ToList();
-            return View(pendingOrderList);
-
         }
         public IActionResult ViewPlaceOrder()
         {
@@ -78,7 +68,6 @@ namespace MyResourcesApp.Controllers
 
             productList.Insert(0, new Product { productName = "Select" });
             ViewBag.ListOfProduct = productList;
-            ViewBag.OrderPending = TempData["Pending"];
             ViewBag.requiredDetails = TempData["Required"];
             return View();
         }
@@ -153,77 +142,55 @@ namespace MyResourcesApp.Controllers
                     //return View("OrderDetails","PlaceOrder");
                 }
                 //var orderInfo = _db.orders.Find(placeOrder.CID, placeOrder.productName);
-                //var orderInfo = _db.order.SingleOrDefault(user => user.CID == placeOrder.CID && user.productName == placeOrder.productName);
-                var IsPendingOrderExists = _db.order.SingleOrDefault(user => user.CID == placeOrder.CID && user.productName == placeOrder.productName && user.OrderStatusID == (char)OrderStatus.Pending && user.SiteID == placeOrder.SiteID);
-
-                if (IsPendingOrderExists != null)
+                var orderInfo = _db.order.SingleOrDefault(user => user.CID == placeOrder.CID && user.productName == placeOrder.productName);
+                if (orderInfo != null)
                 {
-                    TempData["Pending"] = "You have orders in pending! you cannot order again for same product";
-                    return RedirectToAction("ViewPlaceOrder");
+                    //Update the advance balance
+                    var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
+                    getDepositAdvanceDetails.CustomerCID = placeOrder.CID;
+                    getDepositAdvanceDetails.Amount = getDepositAdvanceDetails.Amount;
+                    getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance - totalOrder;
+                    _db.advance.Update(getDepositAdvanceDetails);
+                    await _db.SaveChangesAsync();
+
+                    //update order table
+                    //var getOrderDetails = await _db.orders.FindAsync(placeOrder.CID);
+                    //PlaceOrder order = new PlaceOrder();
+                    orderInfo.CID = placeOrder.CID;
+                    orderInfo.productName = placeOrder.productName;
+                    orderInfo.Quantity = orderInfo.Quantity + placeOrder.Quantity;
+                    orderInfo.SiteID = placeOrder.SiteID;
+                    orderInfo.PriceAmount = orderInfo.PriceAmount + totalOrder;
+                    orderInfo.TransportAmount = orderInfo.TransportAmount + (TransportRate * placeOrder.Quantity + Distance);
+                    orderInfo.AdvanceBalance = getDepositAdvanceDetails.Balance;
+                    //orderInfo.OrderStatus = (char)OrderStatus.Delivered;
+                    _db.order.Update(orderInfo);
+                    await _db.SaveChangesAsync();
+                    return RedirectToAction("OrderDetails");
                 }
                 else
                 {
-                    //get advance details for customer
+                    //Update the advance balance
                     var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
+                    getDepositAdvanceDetails.CustomerCID = placeOrder.CID;
+                    getDepositAdvanceDetails.Amount = getDepositAdvanceDetails.Amount;
+                    getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance - totalOrder;
+                    _db.advance.Update(getDepositAdvanceDetails);
+                    await _db.SaveChangesAsync();
+
                     //save new record to orders table
                     placeOrder.PriceAmount = totalOrder;
                     placeOrder.TransportAmount = (TransportRate * placeOrder.Quantity + Distance);
-                    placeOrder.AdvanceBalance = getDepositAdvanceDetails.Balance - totalOrder;
-                    placeOrder.OrderStatusID = (Char)OrderStatus.Pending;
+                    placeOrder.AdvanceBalance = getDepositAdvanceDetails.Balance;
+                    placeOrder.OrderStatusID = (Char)OrderStatus.Delivered;
                     _db.order.Add(placeOrder);
                     await _db.SaveChangesAsync();
                     return RedirectToAction("OrderDetails");
                 }
-                //if (orderInfo != null)
-                //{
-                //    //Update the advance balance
-                //    var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
-                //    getDepositAdvanceDetails.CustomerCID = placeOrder.CID;
-                //    getDepositAdvanceDetails.Amount = getDepositAdvanceDetails.Amount;
-                //    getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance - totalOrder;
-                //    _db.advance.Update(getDepositAdvanceDetails);
-                //    await _db.SaveChangesAsync();
-
-                //    //update order table
-                //    //var getOrderDetails = await _db.orders.FindAsync(placeOrder.CID);
-                //    //PlaceOrder order = new PlaceOrder();
-                //    orderInfo.CID = placeOrder.CID;
-                //    orderInfo.productName = placeOrder.productName;
-                //    orderInfo.Quantity = orderInfo.Quantity + placeOrder.Quantity;
-                //    orderInfo.SiteID = placeOrder.SiteID;
-                //    orderInfo.PriceAmount = orderInfo.PriceAmount + totalOrder;
-                //    orderInfo.TransportAmount = orderInfo.TransportAmount + (TransportRate * placeOrder.Quantity + Distance);
-                //    orderInfo.AdvanceBalance = getDepositAdvanceDetails.Balance;
-                //    //orderInfo.OrderStatus = (char)OrderStatus.Delivered;
-                //    _db.order.Update(orderInfo);
-                //    await _db.SaveChangesAsync();
-                //    return RedirectToAction("OrderDetails");
-                //}
-                //else
-                //{
-                //   // Update the advance balance
-                //var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
-                //    getDepositAdvanceDetails.CustomerCID = placeOrder.CID;
-                //    getDepositAdvanceDetails.Amount = getDepositAdvanceDetails.Amount;
-                //    getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance - totalOrder;
-                //    _db.advance.Update(getDepositAdvanceDetails);
-                //    await _db.SaveChangesAsync();
-
-                //    //save new record to orders table
-                //    placeOrder.PriceAmount = totalOrder;
-                //    placeOrder.TransportAmount = (TransportRate * placeOrder.Quantity + Distance);
-                //    placeOrder.AdvanceBalance = getDepositAdvanceDetails.Balance;
-
-                //    placeOrder.OrderStatusID = (Char)OrderStatus.Delivered;
-
-                //    _db.order.Add(placeOrder);
-                //    await _db.SaveChangesAsync();
-                //    return RedirectToAction("OrderDetails");
-                //}
 
 
             }
-            return View("OrderDetails");
+            return View("PlaceOrder");
         }
 
         public async Task<IActionResult> GenerateReport(String? cid, String? productName)
