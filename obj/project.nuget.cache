@@ -1,8 +1,12 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "RbQmnEZCq2diDLolH1/Mj0WGgKQAyRMwh8ZXOCrXbhLsBYbUFVBqDXMfBmFBotB8WiWqAVsEbP52KmiMXpJt9g==",
+=======
+  "dgSpecHash": "g5XAbFXPOrXC6+g2iPA+swjQdcU+1cYFi2/LSV4je5NqVQquz4SsbwJ6+1t6SAj9NRMpsAvBMuF0E2u/5g/Uxg==",
+>>>>>>> add6d61c54e65ca5fd24c8129df7094b6fc72d7f
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\source\\repos\\MyResourcesApp\\MyResourcesApp\\MyResourcesApp.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\c# Programming\\MyResourcesApp\\MyResourcesApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\awssdk.core\\3.5.3.8\\awssdk.core.3.5.3.8.nupkg.sha512",
