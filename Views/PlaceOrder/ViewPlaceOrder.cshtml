@@ -12,6 +12,9 @@
     <div class="col-md-4">
         @*<form asp-action="ViewPlaceOrder" id="PlaceOrderForm">*@
         <form  id="PlaceOrderForm" asp-action="SaveOrder">
+            <p style="color:red;">
+                @ViewBag.OrderPending
+            </p>
             <div asp-validation-summary="All" class="text-danger"></div>
           
             <div class="form-group">
@@ -65,16 +68,13 @@
                 {
                     <li>
 
-                        @item
+                      @item
 
 
                     </li>
                 }
             }
         </ul>
-                    @*@TempData["Required"]*@
-                   @TempData["TotalOrderAmt"]
-
                 </fieldset>
             </div>
 
@@ -84,7 +84,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="OrderDetails">Back to List</a>
 </div>
 
 @section Scripts {
@@ -94,7 +94,6 @@
         <script type="text/javascript">
     $(document).ready(function () {
         $('#CID').change(function () {
-            alert("hh")
             var url = '@Url.Content("~/")' + "PlaceOrder/GetSite";
             var ddlsource = "#CID";
             $.getJSON(url, { CID: $(ddlsource).val() }, function (data) {

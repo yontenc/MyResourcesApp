@@ -164,3 +164,5 @@ C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
 C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Rotativa.dll
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\GetPendingOrders.cshtml.g.cs

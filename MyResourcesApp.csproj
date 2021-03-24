@@ -45,4 +45,8 @@
     <PackageReference Include="Rotativa" Version="1.7.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

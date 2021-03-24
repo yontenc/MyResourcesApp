@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<MyResourcesApp.Models.PlaceOrder>
 
 @{
-    ViewData["Title"] = "Order Details";
+    ViewData["Title"] = "GetPendingOrders";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1>GetPendingOrders</h1>
 
 <p>
-    <a asp-action="ViewPlaceOrder">Place New Order</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -24,19 +24,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.SiteID)
             </th>
-
             <th>
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
-            @*<th>
+            <th>
                 @Html.DisplayNameFor(model => model.TransportAmount)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AdvanceBalance)
-            </th>*@
-            @*<th>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.PriceAmount)
-            </th>*@
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.OrderStatusID)
             </th>
@@ -61,22 +60,22 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
-            @*<td>
+            <td>
                 @Html.DisplayFor(modelItem => item.TransportAmount)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AdvanceBalance)
-            </td>*@
-            @*<td>
-                Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
-            </td>*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceAmount)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OrderStatusID)
             </td>
             <td>
-                @Html.ActionLink("Edit Order", "EditCustomerInfo", new { cid = item.CID }, new { @class = "btn btn-primary" }) |
-                @Html.ActionLink("Generate Report", "GenerateReport", new { cid = item.CID, productName = item.productName }, new { @class = "btn btn-primary" }) |
-                <input type="submit" value="Cancel Order" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete site recode with ID= @item.CID')" />
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }
