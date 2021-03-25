@@ -56,7 +56,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Logins\" />
+	<Folder Include="Views\Logins\" />
   </ItemGroup>
 
 </Project>
