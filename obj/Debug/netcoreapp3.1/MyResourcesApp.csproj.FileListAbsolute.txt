@@ -1,163 +1,3 @@
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.exe
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.deps.json
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.runtimeconfig.json
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.runtimeconfig.dev.json
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.pdb
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.Views.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.Views.pdb
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\AWSSDK.DynamoDBv2.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Humanizer.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Npgsql.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.AssemblyInfoInputs.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.AssemblyInfo.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csproj.CoreCompileInputs.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorAssemblyInfo.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorAssemblyInfo.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\staticwebassets\MyResourcesApp.StaticWebAssets.Manifest.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\staticwebassets\MyResourcesApp.StaticWebAssets.xml
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\scopedcss\bundle\MyResourcesApp.styles.css
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.TagHelpers.input.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.TagHelpers.output.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorCoreGenerate.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\EditCustomerInfo.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\EnterNewCustomer.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\RegisterCustomer.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\ViewCustomerInfo.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\DepositAdvance.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\EditDepositAdvanceInfo.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\EnterNewDepositAdvance.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\ViewDepositAdvanceInfo.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\OrderDetails.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\RequiredAmountInfo.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\ViewPlaceOrder.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\ViewPlaceOrders.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\EditProductInfo.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\EnterNewProduct.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\RegisterProduct.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\ViewProductInfo.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Customer_IdExists.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\DoesNotExists_ID.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ForeignKeyConstriant.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Product_Exists.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Site_IdExists.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\EditSiteInfo.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\EnterNewSite.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\RegisterSite.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\ViewSiteInfo.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorTargetAssemblyInfo.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorTargetAssemblyInfo.cs
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.Views.pdb
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csproj.CopyComplete
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.dll
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.pdb
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.genruntimeconfig.cache
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\GenerateReport.cshtml.g.cs
-<<<<<<< HEAD
-C:\Users\USER\source\repos\MyResourcesApp\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csprojAssemblyReference.cache
-C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.dll
-C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.pdb
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\MyResourcesApp.exe
@@ -278,3 +118,59 @@ C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\ru\M
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.AssemblyInfo.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorAssemblyInfo.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorAssemblyInfo.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\staticwebassets\MyResourcesApp.StaticWebAssets.Manifest.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\staticwebassets\MyResourcesApp.StaticWebAssets.xml
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\scopedcss\bundle\MyResourcesApp.styles.css
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.TagHelpers.input.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.TagHelpers.output.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorCoreGenerate.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\EditCustomerInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\EnterNewCustomer.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\RegisterCustomer.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\ViewCustomerInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\DepositAdvance.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\EditDepositAdvanceInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\EnterNewDepositAdvance.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\DepositAdvance\ViewDepositAdvanceInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\GenerateReport.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\OrderDetails.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\RequiredAmountInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\ViewPlaceOrder.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\PlaceOrder\ViewPlaceOrders.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\EditProductInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\EnterNewProduct.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\RegisterProduct.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\ViewProductInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ChangedPassword.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Customer_IdExists.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\DoesNotExists_ID.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ForeignKeyConstriant.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Login.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Product_Exists.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Site_IdExists.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginLayout.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\EditSiteInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\EnterNewSite.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\RegisterSite.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Site\ViewSiteInfo.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorTargetAssemblyInfo.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.RazorTargetAssemblyInfo.cs
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.Views.pdb
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.csproj.CopyComplete
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.dll
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.pdb
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.genruntimeconfig.cache
