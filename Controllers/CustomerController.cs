@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyResourcesApp.Controllers
 {
@@ -12,13 +14,17 @@ namespace MyResourcesApp.Controllers
     {
         private readonly ApplicationContext _db;
         private readonly ILogger<CustomerController> _logger;
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
 
-
-        public CustomerController(ApplicationContext db , ILogger<CustomerController> logger)
+        public CustomerController(ApplicationContext db , ILogger<CustomerController> logger, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _db = db;
             _logger = logger;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
+     
         public IActionResult RegisterCustomer()
         {
             _logger.LogDebug("Getting Customer Info");
@@ -31,12 +37,13 @@ namespace MyResourcesApp.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> EnterNewCustomer(Customer cus)
         {
             if (ModelState.IsValid)
             {
+                //var result = await userManager.CreateAsync(cus);
                 var customerInfo = _db.customer.Find(cus.CID);
                 if (customerInfo?.CID != null)
                 {
@@ -50,14 +57,25 @@ namespace MyResourcesApp.Controllers
                 {
                     _db.Add(cus);
                     await _db.SaveChangesAsync();
-                    return RedirectToAction("RegisterCustomer");
+                    //save User Info
+                    UserInfo userInfo = new UserInfo();
+                    userInfo.UserID = cus.CID;
+                    userInfo.UserName = cus.CustomerName;
+                    userInfo.EmailAddress = cus.EmailAddress;
+                    userInfo.Password = "12345";
+                    userInfo.CreatedDate = new DateTime();
+                    userInfo.LoginCout = 1;
+
+                    _db.user.Add(userInfo);
+                    await _db.SaveChangesAsync();
+                    return View("Login");
                 }
                
               
             }
             return View(cus);
         }
-
+        
         public async Task<IActionResult> EditCustomerInfo(String cid)
         {
             if (cid == null || cid.Equals(""))

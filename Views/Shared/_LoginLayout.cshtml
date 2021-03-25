@@ -1,5 +1,4 @@
-﻿
-@*@inject SignInManager<IdentityUser> signInManager;*@
+﻿@*@inject SignInManager<IdentityUser> signInManager;*@
 
 
 <!DOCTYPE html>
@@ -30,15 +29,15 @@
 
 </head>
 <body>
-    
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-default border-bottom box-shadow mb-3">
+        <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-default border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-controller="home" asp-action="index">
                     <img src="~/images/logo.png" alt="logo" class="rounded-circle m" width="60" height="60">
-                </a>
+                </a>-->
                 @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="index">NRDCL</a>*@
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -70,28 +69,28 @@
                             </form>
                         </li>
                         <li class="nav-item ml-4">
-                            @if (ViewBag.UserInfo != null)
+                            if (ViewBag.UserInfo != null)
                             {
                             <li class="nav-item">
                                 <form method="post" asp-action="Logout" asp-controller="Login">
                                     <button type="submit" class="nav-link" style="width:auto">
                                         Logout
                                     </button>
-                                    @foreach (var item in ViewBag.UserInfo)
+                                    foreach (var item in ViewBag.UserInfo)
                                     {
-                                        @item
+                                        item
                                     }
 
                                 </form>
                             </li>
-                        }
-                        else
-                        {
+                                //}
+                            //else
+                            {
 
                             <li>
                                 <partial name="Login" />
                             </li>
-                        }
+                        @*  *@}
 
 
                         </ul>
@@ -99,7 +98,7 @@
                     </div>
 
                 </div>
-            </nav>
+            </nav>-->
         </header>
 
         <div class="container">
