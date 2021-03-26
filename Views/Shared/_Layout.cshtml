@@ -1,5 +1,4 @@
 ﻿
-@*@inject SignInManager<IdentityUser> signInManager;*@
 
 
 <!DOCTYPE html>
@@ -88,9 +87,11 @@
                         else
                         {
 
-                            <li>
-                                <partial name="Login" />
-                            </li>
+                    <li>
+                        <a class="nav-link" asp-controller="Login" asp-action="Login">Login</a>
+                        <!--<a class="nav-link" asp-controller="Login" asp-action="Login" data-toggle="modal" data-target="#myModal">Login</a>-->
+                        @*<partial name="Login" />*@
+                    </li>
                         }
 
 
@@ -138,9 +139,6 @@
                 $('#dataTable').DataTable({
 
                 })
-            })
-            $('#myModal').on('shown.bs.modal', function () {
-                $('#myInput').trigger('focus')
             })
         </script>
     </body>

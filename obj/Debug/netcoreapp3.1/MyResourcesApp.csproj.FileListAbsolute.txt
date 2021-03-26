@@ -174,3 +174,4 @@ C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyRe
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.dll
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.pdb
 C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\MyResourcesApp.genruntimeconfig.cache
+C:\Users\USER\Desktop\c# Programming\MyResourcesApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\RegisterByCustomer.cshtml.g.cs

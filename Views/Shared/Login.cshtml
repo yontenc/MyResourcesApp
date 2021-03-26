@@ -3,47 +3,35 @@
 
 @{
     Layout = "_LoginLayout";
-    ViewBag.Title = "User Login";
+  
 }
-@*<a class="nav-link" asp-controller="Login" asp-action="Login" data-toggle="modal" data-target="#myModal">Login</a>*@
 
-<div class="row modal fade" id="myModal" tabindex="-1" role="dialog">
-    <h5 class="modal-title">User Login</h5>
-    <div class="col-md-4 modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <form method="post" asp-action="Login" asp-controller="Login">
-                    @*<div asp-validation-summary="All" class="text-danger"></div>*@
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div class="form-group">
-                        <label>User ID</label>
-                        <input asp-for="UserID" id="UserID" class="form-control" autocomplete="off" />
-                        <span asp-validation-for="UserID" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input asp-for="Password" id="Password" class="form-control" autocomplete="off" />
-                        <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                    @*<div class="form-group">
-                            <div class="checkbox">
-                                <label asp-for="RememberMe">
-                                    <input asp-for="RememberMe" />
-                                    @Html.DisplayNameFor(m => m.RememberMe)
-                                </label>
-                            </div>
-                        </div>*@<div class="modal-footer">
-                        <input type="submit" class="btn btn-primary" value="Login" data-dismiss="modal">
-                    </div>
 
-                </form>
+<div class=" LoginHeader">
+    <fieldset class="loginLabel">
+        <legend>Login</legend>
+        <hr />
+        <form method="post" asp-action="Login" asp-controller="Login">
+            <div class="form-group">
+                <label>User ID</label>
+                <input asp-for="UserID" id="UserID" class="form-control" autocomplete="off" />
+                <span asp-validation-for="UserID" class="text-danger"></span>
             </div>
-        </div>
-        </div>
-    </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input asp-for="Password" id="Password" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login"> 
+            <br />
+            <p> To Sign Up <a asp-action="EnterNewCustomer" asp-controller="Customer">Click Here</a></p>
+            
+        </form>
+
+    </fieldset>
 </div>
+
+
 
 
 

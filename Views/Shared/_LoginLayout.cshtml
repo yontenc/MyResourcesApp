@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NRDCL</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
 
 
     <!--Client Side validation-->
@@ -122,25 +123,10 @@
         <!-- Page level plugin JavaScript-->
         <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-        <!--Bootstrap Datatable Export--->
-        @*<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-            <script src="https://unpkg.com/tableexport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
-            <script src="https://unpkg.com/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
-            <script src="assets/bootstrap-table.min.js"></script>
-            <script src="assets/extensions/print/bootstrap-table-print.min.js"></script>
-            <script src="assets/extensions/export/bootstrap-table-export.min.js"></script>*@
+        
 
 
         @RenderSection("Scripts", required: false)
-        <script>
-            $(document).ready(function () {
-                $('#dataTable').DataTable({
-
-                })
-            })
-            $('#myModal').on('shown.bs.modal', function () {
-                $('#myInput').trigger('focus')
-            })
-        </script>
+       
     </body>
 </html>

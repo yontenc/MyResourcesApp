@@ -60,6 +60,7 @@ namespace MyResourcesApp.Controllers
                 {
                     if (userInfos.LoginCout.Equals(1))
                     {
+
                       
                         return View("ChangedPassword",userInfos);
                     }
