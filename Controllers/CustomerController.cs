@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
 using Microsoft.Extensions.Logging;
+using System.Net;
+using System.Net.Mail;
+using MyResourcesApp.Common;
 
 namespace MyResourcesApp.Controllers
 {
@@ -12,7 +15,14 @@ namespace MyResourcesApp.Controllers
     {
         private readonly ApplicationContext _db;
         private readonly ILogger<CustomerController> _logger;
-
+        //static string smtpAddress = "smtp.gmail.com";
+        //static int portNumber = 587;
+        //static bool enableSSL = true;
+        //static string emailFromAddress = "tandinc6@gmail.com"; //Sender Email Address  
+        //static string password = "choden@2017"; //Sender Password  
+        ////static string emailToAddress = "yontenchoden1991@gmail.com"; //Receiver Email Address  
+        //static string subject = "Registered in NRDCL system";
+        ////static string body = "Hello, This is Email sending test using gmail.";
 
         public CustomerController(ApplicationContext db , ILogger<CustomerController> logger)
         {
@@ -42,12 +52,31 @@ namespace MyResourcesApp.Controllers
                 {
                     ViewBag.CID = customerInfo.CID;
                     return View("Customer_IdExists");
-
-              //      throw new ArgumentException(
-              //$"Cid already exists for: {customerInfo.CID}.", nameof(customerInfo.CID));
                 }
                 else
                 {
+                    //using (MailMessage mail = new MailMessage())
+                    //{
+                       
+                    //    mail.From = new MailAddress(emailFromAddress);
+                    //    mail.To.Add(cus.EmailAddress);
+                    //    mail.Subject = subject;
+                    //    mail.Body = "Use this number as passowrd"+pw+"to change your login information";
+                    //    mail.IsBodyHtml = true;
+                    //    //mail.Attachments.Add(new Attachment("D:\\TestFile.txt"));//--Uncomment this to send any attachment  
+                    //    using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
+                    //    {
+                    //        smtp.Credentials = new NetworkCredential(emailFromAddress, password);
+                    //        smtp.EnableSsl = enableSSL;
+                    //        smtp.Send(mail);
+                    //    }
+                    //}
+                    Random random = new Random();
+                    int pw = random.Next();
+                    string subject = "Registered in NRDCL system";
+                    string body = "Use this number: "+pw+" as passowrd to change your login information";
+                    CommonService.SendEmail(cus.EmailAddress, subject, body);
+
                     _db.Add(cus);
                     await _db.SaveChangesAsync();
                     return RedirectToAction("RegisterCustomer");
