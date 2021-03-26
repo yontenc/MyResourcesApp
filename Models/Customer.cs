@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MyResourcesApp.Models
 {
-    public class Customer
+    public class Customer 
     {
         [Key]
         [Required(ErrorMessage = "CID is required")]
@@ -23,6 +24,7 @@ namespace MyResourcesApp.Models
         [Required(ErrorMessage = "Email address is required")]
         [Display(Name = "Email Address")]
         [DataType(DataType.EmailAddress)]
+        [Remote(action: "IsEmailInUser", controller: "Customer")]
         public String EmailAddress { get; set; }
     }
 }

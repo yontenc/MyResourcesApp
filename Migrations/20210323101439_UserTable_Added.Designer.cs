@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyResourcesApp.Models;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -9,9 +10,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MyResourcesApp.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20210323101439_UserTable_Added")]
+    partial class UserTable_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -295,14 +297,8 @@ namespace MyResourcesApp.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("CustomerName")
-                        .HasColumnType("text");
-
                     b.Property<char>("OrderStatusID")
                         .HasColumnType("character(1)");
-
-                    b.Property<string>("OrderStatusName")
-                        .HasColumnType("text");
 
                     b.Property<decimal>("PriceAmount")
                         .HasColumnType("numeric");
@@ -312,9 +308,6 @@ namespace MyResourcesApp.Migrations
 
                     b.Property<int>("SiteID")
                         .HasColumnType("integer");
-
-                    b.Property<string>("SiteName")
-                        .HasColumnType("text");
 
                     b.Property<decimal>("TransportAmount")
                         .HasColumnType("numeric");

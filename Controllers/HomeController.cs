@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyResourcesApp.Models;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace MyResourcesApp.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,9 +20,10 @@ namespace MyResourcesApp.Controllers
 
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
+            ViewBag.UserInfo = TempData["UserInfo"];
             return View();
         }
 

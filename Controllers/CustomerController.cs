@@ -5,9 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
 using Microsoft.Extensions.Logging;
-using System.Net;
-using System.Net.Mail;
-using MyResourcesApp.Common;
 
 namespace MyResourcesApp.Controllers
 {
@@ -15,20 +12,16 @@ namespace MyResourcesApp.Controllers
     {
         private readonly ApplicationContext _db;
         private readonly ILogger<CustomerController> _logger;
-        //static string smtpAddress = "smtp.gmail.com";
-        //static int portNumber = 587;
-        //static bool enableSSL = true;
-        //static string emailFromAddress = "tandinc6@gmail.com"; //Sender Email Address  
-        //static string password = "choden@2017"; //Sender Password  
-        ////static string emailToAddress = "yontenchoden1991@gmail.com"; //Receiver Email Address  
-        //static string subject = "Registered in NRDCL system";
-        ////static string body = "Hello, This is Email sending test using gmail.";
+
 
         public CustomerController(ApplicationContext db , ILogger<CustomerController> logger)
         {
             _db = db;
             _logger = logger;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
+     
         public IActionResult RegisterCustomer()
         {
             _logger.LogDebug("Getting Customer Info");
@@ -41,12 +34,13 @@ namespace MyResourcesApp.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> EnterNewCustomer(Customer cus)
         {
             if (ModelState.IsValid)
             {
+                //var result = await userManager.CreateAsync(cus);
                 var customerInfo = _db.customer.Find(cus.CID);
                 if (customerInfo?.CID != null)
                 {
@@ -90,14 +84,25 @@ namespace MyResourcesApp.Controllers
 
                     _db.Add(cus);
                     await _db.SaveChangesAsync();
-                    return RedirectToAction("RegisterCustomer");
+                    //save User Info
+                    UserInfo userInfo = new UserInfo();
+                    userInfo.UserID = cus.CID;
+                    userInfo.UserName = cus.CustomerName;
+                    userInfo.EmailAddress = cus.EmailAddress;
+                    userInfo.Password = "12345";
+                    userInfo.CreatedDate = new DateTime();
+                    userInfo.LoginCout = 1;
+
+                    _db.user.Add(userInfo);
+                    await _db.SaveChangesAsync();
+                    return View("Login");
                 }
                
               
             }
             return View(cus);
         }
-
+        
         public async Task<IActionResult> EditCustomerInfo(String cid)
         {
             if (cid == null || cid.Equals(""))

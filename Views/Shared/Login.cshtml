@@ -1,0 +1,37 @@
+﻿
+@model MyResourcesApp.Models.UserInfo
+
+@{
+    Layout = "_LoginLayout";
+  
+}
+
+
+<div class=" LoginHeader">
+    <fieldset class="loginLabel">
+        <legend>Login</legend>
+        <hr />
+        <form method="post" asp-action="Login" asp-controller="Login">
+            <div class="form-group">
+                <label>User ID</label>
+                <input asp-for="UserID" id="UserID" class="form-control" autocomplete="off" />
+                <span asp-validation-for="UserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input asp-for="Password" id="Password" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login"> 
+            <br />
+            <p> To Sign Up <a asp-action="EnterNewCustomer" asp-controller="Customer">Click Here</a></p>
+            
+        </form>
+
+    </fieldset>
+</div>
+
+
+
+
+
