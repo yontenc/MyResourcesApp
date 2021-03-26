@@ -1,0 +1,12 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Order Pending!";
+}
+
+<h1 class="text-danger">@ViewData["Title"]</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h3>Customer "@ViewBag.CustomerID" has pending order!</h3>
+<h4>You cannot delete the advance deposit.</h4>
+<div>
+    @Html.ActionLink("Ok", "DepositAdvance", new { @class = "btn btn-primary" })
+</div>

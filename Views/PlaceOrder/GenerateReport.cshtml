@@ -61,40 +61,57 @@
                     @Html.DisplayNameFor(model => model.productName)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.SiteName)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.PriceAmount)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.TransportAmount)
                 </th>
 
-
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderStatusName)
+                </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in (ViewBag.CustomerProductDetails as IEnumerable<PlaceOrder>))
             {
-                <tr>
+            <tr>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.productName)
-                    </td>
-                    <td>
-                        Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
-                    </td>
-                    <td>
-                        Nu. @Html.DisplayFor(modelItem => item.TransportAmount)
-                    </td>
-                </tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SiteName)
+                </td>
+                <td>
+                    Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
+                </td>
+                <td>
+                    Nu. @Html.DisplayFor(modelItem => item.TransportAmount)
+                </td>
+                <td>
+                 @Html.DisplayFor(modelItem => item.OrderStatusName)
+                </td>
+            </tr>
             }
         </tbody>
     </table>
 </div>
-@using (Html.BeginForm("Export", "PlaceOrder", FormMethod.Post))
-{
-    <input type="hidden" name="GridHtml" />
-    <input type="submit" id="btnSubmit" value="Download To PDF" class="btn btn-secondary"/>
-}
+
+    @using (Html.BeginForm("Export", "PlaceOrder", FormMethod.Post))
+    {
+        <input type="hidden" name="GridHtml" />
+        <input type="submit" id="btnSubmit" value="Download To PDF" class="btn btn-secondary" />
+
+    } 
+<br />
+<div>
+    <a asp-action="OrderDetails">Back to List</a>
+</div>
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script type="text/javascript">
     $(function () {

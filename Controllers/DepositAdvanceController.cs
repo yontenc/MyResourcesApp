@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
+using Enums;
 
 namespace MyResourcesApp.Controllers
 {
@@ -132,9 +133,17 @@ namespace MyResourcesApp.Controllers
         {
 
             var getAdvanceDepositDetails = await _db.advance.FindAsync(customerCID);
+            var getOrderDetails = _db.order.FirstOrDefault(o => o.CID == customerCID && o.OrderStatusID == (char)OrderStatus.Pending);
+            if (getOrderDetails != null)
+            {
+                ViewBag.CustomerID = customerCID;
+                return View("PendingOrder_Advance");
+            }
+            else { 
             _db.advance.Remove(getAdvanceDepositDetails);
             await _db.SaveChangesAsync();
             return RedirectToAction("DepositAdvance");
+            }
         }
     }
 }

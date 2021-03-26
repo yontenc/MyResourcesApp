@@ -57,7 +57,7 @@ namespace MyResourcesApp.Controllers
                 {
                     //using (MailMessage mail = new MailMessage())
                     //{
-                       
+
                     //    mail.From = new MailAddress(emailFromAddress);
                     //    mail.To.Add(cus.EmailAddress);
                     //    mail.Subject = subject;
@@ -71,6 +71,17 @@ namespace MyResourcesApp.Controllers
                     //        smtp.Send(mail);
                     //    }
                     //}
+                    //save User Info
+                    UserInfo userInfo = new UserInfo();
+                    userInfo.UserID = cus.CID;
+                    userInfo.UserName = cus.CustomerName;
+                    userInfo.EmailAddress = cus.EmailAddress;
+                    userInfo.Password = "12345";
+                    userInfo.CreatedDate = new DateTime();
+                    userInfo.LoginCout = 1;
+
+                    _db.user.Add(userInfo);
+                    await _db.SaveChangesAsync();
                     Random random = new Random();
                     int pw = random.Next();
                     string subject = "Registered in NRDCL system";

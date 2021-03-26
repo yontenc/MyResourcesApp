@@ -295,8 +295,14 @@ namespace MyResourcesApp.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("text");
+
                     b.Property<char>("OrderStatusID")
                         .HasColumnType("character(1)");
+
+                    b.Property<string>("OrderStatusName")
+                        .HasColumnType("text");
 
                     b.Property<decimal>("PriceAmount")
                         .HasColumnType("numeric");
@@ -306,6 +312,9 @@ namespace MyResourcesApp.Migrations
 
                     b.Property<int>("SiteID")
                         .HasColumnType("integer");
+
+                    b.Property<string>("SiteName")
+                        .HasColumnType("text");
 
                     b.Property<decimal>("TransportAmount")
                         .HasColumnType("numeric");

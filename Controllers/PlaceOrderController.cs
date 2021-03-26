@@ -4,31 +4,30 @@ using MyResourcesApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Enums;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-
+using MyResourcesApp.Common;
 using Microsoft.EntityFrameworkCore;
-
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
-using iTextSharp.text.html.simpleparser;
-using Rotativa;
+
 
 namespace MyResourcesApp.Controllers
 {
  
     public class PlaceOrderController : Controller
     {
+        //region private variables
         private readonly ApplicationContext _db;
         private decimal totalOrder;
         private decimal PricePerUnit;
         private decimal TransportRate;
         private decimal Distance;
         private decimal Balance;
+        //endregion
+       
 
         //region private method
         private Decimal getBalanceAmt(String CID)
@@ -55,13 +54,22 @@ namespace MyResourcesApp.Controllers
         {
            
             var orderInfoList = _db.order.ToList();
-          
             return View(orderInfoList);
+
+        }
+        public IActionResult GetPendingOrderList()
+        {
+
+            var pendingOrderList = (from order in _db.order
+                                            where order.OrderStatusID == (char) OrderStatus.Pending
+                                            select order).ToList(); ;
+
+            return View(pendingOrderList);
 
         }
         public IActionResult ViewPlaceOrder()
         {
-            //TempData["TotalOrderAmt"] = 0;
+        
             List<Product> productList = new List<Product>();
             productList = (from p in _db.product
                            select p).ToList();
@@ -108,29 +116,15 @@ namespace MyResourcesApp.Controllers
             return totalOrder;
         }
 
-     
-        public String GetRequiredAmountDetails()
-        {
-            decimal RequiredAmt = (totalOrder - Balance);
-            string message = "You cannot place order since you have Advance balance: " + Balance + ",Total order Amount :" + totalOrder +
-                "and you need to deposit advance amount: " + RequiredAmt;
-            return message;
-        }
-
-
         [HttpPost]
         public async Task<IActionResult> SaveOrder(PlaceOrder placeOrder)
-        //public IActionResult SaveOrder(PlaceOrder placeOrder)
+        
         {
          
             if (ModelState.IsValid)
             {
                 if (CalculateOrder(placeOrder) > getBalanceAmt(placeOrder.CID))
                 {
-
-                    //////ViewBag.TotalOrderAmt = CalculateOrder(placeOrder);
-                    //TempData["TotalOrderAmt"] = totalOrder;
-                    //TempData["BalanceAmt"] = Balance;
 
                     var requiredDetails = new List<string> {
                                            "Total Order Amount:  Nu." + totalOrder,
@@ -139,62 +133,144 @@ namespace MyResourcesApp.Controllers
                                                 };
                     TempData["Required"] = requiredDetails;
                     return RedirectToAction("ViewPlaceOrder");
-                    //return View("OrderDetails","PlaceOrder");
-                }
-                //var orderInfo = _db.orders.Find(placeOrder.CID, placeOrder.productName);
-                var orderInfo = _db.order.SingleOrDefault(user => user.CID == placeOrder.CID && user.productName == placeOrder.productName);
-                if (orderInfo != null)
-                {
-                    //Update the advance balance
-                    var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
-                    getDepositAdvanceDetails.CustomerCID = placeOrder.CID;
-                    getDepositAdvanceDetails.Amount = getDepositAdvanceDetails.Amount;
-                    getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance - totalOrder;
-                    _db.advance.Update(getDepositAdvanceDetails);
-                    await _db.SaveChangesAsync();
-
-                    //update order table
-                    //var getOrderDetails = await _db.orders.FindAsync(placeOrder.CID);
-                    //PlaceOrder order = new PlaceOrder();
-                    orderInfo.CID = placeOrder.CID;
-                    orderInfo.productName = placeOrder.productName;
-                    orderInfo.Quantity = orderInfo.Quantity + placeOrder.Quantity;
-                    orderInfo.SiteID = placeOrder.SiteID;
-                    orderInfo.PriceAmount = orderInfo.PriceAmount + totalOrder;
-                    orderInfo.TransportAmount = orderInfo.TransportAmount + (TransportRate * placeOrder.Quantity + Distance);
-                    orderInfo.AdvanceBalance = getDepositAdvanceDetails.Balance;
-                    //orderInfo.OrderStatus = (char)OrderStatus.Delivered;
-                    _db.order.Update(orderInfo);
-                    await _db.SaveChangesAsync();
-                    return RedirectToAction("OrderDetails");
                 }
                 else
                 {
-                    //Update the advance balance
                     var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
+                    var getSiteDetails = await _db.site.FindAsync(placeOrder.SiteID);
+                    var getCustomerDetails = await _db.customer.FindAsync(placeOrder.CID);
+                    //save new record to orders table
+                    placeOrder.PriceAmount = totalOrder;
+                    placeOrder.TransportAmount = (TransportRate * placeOrder.Quantity + Distance);
+                    placeOrder.AdvanceBalance = getDepositAdvanceDetails.Balance -totalOrder;
+                    placeOrder.CustomerName = getCustomerDetails.CustomerName;
+                    placeOrder.SiteName = getSiteDetails.SiteName;
+                    placeOrder.OrderStatusName = "Pending";
+                    placeOrder.OrderStatusID = (Char)OrderStatus.Pending;
+                    _db.order.Add(placeOrder);
+                    await _db.SaveChangesAsync();
+                    string subject = "Your ordered";
+                    string body = "Your Order is placed successfully with order Id: " + placeOrder.OrderID + "."; 
+                    CommonService.SendEmail(getCustomerDetails.EmailAddress, subject, body);
+
+                    return RedirectToAction("OrderDetails");
+                }
+              }
+            return View("PlaceOrder");
+        }
+        [HttpPost]
+        public async Task<IActionResult> ApproveOrder(int OrderID)
+        {
+
+            if (ModelState.IsValid)
+            {
+               //get the order details for approve
+                PlaceOrder placeOrder = await _db.order.FindAsync(OrderID);
+                //get customer details for updating advance balance
+                var getCustomerDetails = await _db.customer.FindAsync(placeOrder.CID);
+                //Update the advance balance
+                var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
                     getDepositAdvanceDetails.CustomerCID = placeOrder.CID;
                     getDepositAdvanceDetails.Amount = getDepositAdvanceDetails.Amount;
-                    getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance - totalOrder;
+                    getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance - placeOrder.PriceAmount;
                     _db.advance.Update(getDepositAdvanceDetails);
                     await _db.SaveChangesAsync();
 
                     //save new record to orders table
-                    placeOrder.PriceAmount = totalOrder;
-                    placeOrder.TransportAmount = (TransportRate * placeOrder.Quantity + Distance);
-                    placeOrder.AdvanceBalance = getDepositAdvanceDetails.Balance;
+                    placeOrder.AdvanceBalance = getDepositAdvanceDetails.Balance - placeOrder.PriceAmount;
                     placeOrder.OrderStatusID = (Char)OrderStatus.Delivered;
-                    _db.order.Add(placeOrder);
+                    placeOrder.OrderStatusName ="Delivered";
+                    _db.order.Update(placeOrder);
                     await _db.SaveChangesAsync();
-                    return RedirectToAction("OrderDetails");
-                }
+                //send mail for successful ordered delivered
+                string subject = "Your Ordered Is Delivered";
+                string body = "Your Order with order Id:" + placeOrder.OrderID + "is delivered on" + new DateTime() + ".";
+                CommonService.SendEmail(getCustomerDetails.EmailAddress, subject, body);
+                return RedirectToAction("OrderDetails");
+                //}
 
 
             }
-            return View("PlaceOrder");
+            return View("OrderDetails");
+        }
+        [HttpPost]
+        public async Task<IActionResult> CancelOrder(int OrderID)
+        {
+            PlaceOrder placeOrder = await _db.order.FindAsync(OrderID);
+            var getDepositAdvanceDetails = await _db.advance.FindAsync(placeOrder.CID);
+            //update order
+            placeOrder.OrderStatusID = (char)OrderStatus.Canceled;
+            placeOrder.OrderStatusName = "Canceled";
+            _db.order.Update(placeOrder);
+            await _db.SaveChangesAsync();
+            //update advance balance
+            getDepositAdvanceDetails.Balance = getDepositAdvanceDetails.Balance + placeOrder.PriceAmount;
+            _db.advance.Update(getDepositAdvanceDetails);
+            await _db.SaveChangesAsync();
+            return RedirectToAction("OrderDetails");
+        }
+        
+        //edit order 
+        public async Task<IActionResult> EditOrderInfo(int? OrderID)
+        {
+            if (OrderID == null)
+            {
+                return RedirectToAction("OrderDetails");
+            }
+            var getOrderDetails = await _db.order.FindAsync(OrderID);
+            List<Product> productList = new List<Product>();
+            productList = (from p in _db.product
+                           select p).ToList();
+
+            List<Site> siteList = new List<Site>();
+            siteList = (from s in _db.site
+                        where s.CustomerID == getOrderDetails.CID
+                        select s).ToList();
+            siteList.Insert(0, new Site { SiteID = 0, SiteName = "Select" }); 
+            ViewBag.ListOfSite = siteList;
+
+            productList.Insert(0, new Product { productName = "Select" });
+            ViewBag.ListOfProduct = productList;
+           
+            return View(getOrderDetails);
         }
 
+        //edit pending order
+        [HttpPost]
+        public async Task<IActionResult> EditOrderInfo(PlaceOrder placeOrder)
+        {
+            if (ModelState.IsValid)
+            {
+                if (CalculateOrder(placeOrder) > getBalanceAmt(placeOrder.CID))
+                {
+                    var requiredDetails = new List<string> {
+                                           "Total Order Amount:  Nu." + totalOrder,
+                                             "Advance Balance: Nu." + Balance,
+                                            "Required Amount: Nu."+(totalOrder-Balance)
+                                                };
+                    TempData["Required"] = requiredDetails;
+                    return RedirectToAction("ViewPlaceOrder");
+                }
+                else
+                {
+                    //get site details for saving site name
+                    var getSiteDetails = await _db.site.FindAsync(placeOrder.SiteID);
+                     //update order table
+                    placeOrder.PriceAmount = totalOrder;
+                    placeOrder.TransportAmount = (TransportRate * placeOrder.Quantity + Distance);
+                    placeOrder.AdvanceBalance = Balance - totalOrder;
+                    placeOrder.SiteName = getSiteDetails.SiteName;
+                    _db.order.Update(placeOrder);
+                    await _db.SaveChangesAsync();
+                    return RedirectToAction("OrderDetails");
+                }
+               
+            }
+            return View(placeOrder);
+        }
+
+        //generate report with CId and Product wise 
         public async Task<IActionResult> GenerateReport(String? cid, String? productName)
-        //public IActionResult GenerateReport(String? cid)
         {
 
             if (cid == null || cid.Equals(""))
@@ -220,9 +296,8 @@ namespace MyResourcesApp.Controllers
             return View();
         }
 
-
+        //download odf form
         [HttpPost]
-        //[ValidateInput(false)]
         public FileResult Export(string GridHtml)
         {
             using (MemoryStream stream = new System.IO.MemoryStream())
@@ -236,6 +311,7 @@ namespace MyResourcesApp.Controllers
                 return File(stream.ToArray(), "application/pdf", "Order_Report.pdf");
             }
         }
+        //endregion
     
     }
 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MyResourcesApp.Models;
 using Microsoft.EntityFrameworkCore;
+using Enums;
 
 namespace MyResourcesApp.Controllers
 {
@@ -73,8 +74,13 @@ namespace MyResourcesApp.Controllers
             {
                 return RedirectToAction("RegisterProduct");
             }
-
             var getProductDetails = await _db.product.FindAsync(productName);
+            var getOrderDetails =_db.order.FirstOrDefault(o => o.productName == productName && o.OrderStatusID == (char)OrderStatus.Pending);
+            if (getOrderDetails != null)
+            {  
+                ViewBag.ProductName = productName;
+                return View("PendingOrder_Product");
+            }
             return View(getProductDetails);
         }
 
@@ -106,9 +112,19 @@ namespace MyResourcesApp.Controllers
         public async Task<IActionResult> DeleteProductInfo(String productName)
         {
             var viewProductDetails = await _db.product.FindAsync(productName);
-            _db.product.Remove(viewProductDetails);
-            await _db.SaveChangesAsync();
-            return RedirectToAction("RegisterProduct");
+            var getOrderDetails = _db.order.FirstOrDefault(o => o.productName == productName && o.OrderStatusID == (char)OrderStatus.Pending);
+            if (getOrderDetails != null)
+            {
+                ViewBag.ProductName = productName;
+                return View("PendingOrder_Product");
+            }
+            else
+            {
+                _db.product.Remove(viewProductDetails);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("RegisterProduct");
+            }
+          
         }
         
     }

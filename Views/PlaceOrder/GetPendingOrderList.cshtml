@@ -1,0 +1,110 @@
+﻿@model IEnumerable<MyResourcesApp.Models.PlaceOrder>
+
+@{
+    ViewData["Title"] = "Pending Order List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="hidden-row">
+                @Html.DisplayNameFor(model => model.OrderID)
+            </th>
+            <th class="hidden-row">
+                @Html.DisplayNameFor(model => model.CID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productName)
+            </th>
+            <th class="hidden-row">
+                @Html.DisplayNameFor(model => model.SiteID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th class="hidden-row">
+                @Html.DisplayNameFor(model => model.TransportAmount)
+            </th>
+            <th class="hidden-row">
+                @Html.DisplayNameFor(model => model.AdvanceBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatusName)
+            </th>
+            <th class="hidden-row">
+                @Html.DisplayNameFor(model => model.OrderStatusID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    using (Html.BeginForm("ApproveOrder", "PlaceOrder", new { OrderID = item.OrderID }))
+    {
+        <tr>
+            <td class="hidden-row">
+                @Html.DisplayFor(modelItem => item.OrderID)
+            </td>
+            <td class="hidden-row">
+                @Html.DisplayFor(modelItem => item.CID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+            <td class="hidden-row">
+                @Html.DisplayFor(modelItem => item.SiteID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td class="hidden-row">
+                @Html.DisplayFor(modelItem => item.TransportAmount)
+            </td>
+            <td class="hidden-row">
+                @Html.DisplayFor(modelItem => item.AdvanceBalance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatusName)
+            </td>
+            <td class="hidden-row">
+                @Html.DisplayFor(modelItem => item.OrderStatusID)
+            </td>
+            <td>
+                <input type="submit" value="Delivered" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to Delivered this Order To= @item.CustomerName')" />|
+                @Html.ActionLink("Cancel", "Delete", new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+    }
+}
+    </tbody>
+</table>
+<style>
+    .visible-row {
+        display: normal;
+    }
+
+    .hidden-row {
+        display: none;
+    }
+</style>

@@ -1,0 +1,172 @@
+﻿@model MyResourcesApp.Models.PlaceOrder
+
+@{
+    ViewData["Title"] = "EditOrderInfo";
+}
+
+<h1>EditOrderInfo</h1>
+
+<h4>PlaceOrder</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="EditOrderForm" asp-action="EditOrderInfo">
+            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="OrderID" class="control-label"></label>
+            <input asp-for="OrderID" class="form-control" />
+            <span asp-validation-for="OrderID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CID" class="control-label"></label>
+            <input asp-for="CID" class="form-control" />
+            <span asp-validation-for="CID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerName" class="control-label"></label>
+            <input asp-for="CustomerName" class="form-control" />
+            <span asp-validation-for="CustomerName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="productName" class="control-label"></label>
+            <input asp-for="productName" class="form-control" />
+            <span asp-validation-for="productName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SiteID" class="control-label"></label>
+            <input asp-for="SiteID" class="form-control" />
+            <span asp-validation-for="SiteID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SiteName" class="control-label"></label>
+            <input asp-for="SiteName" class="form-control" />
+            <span asp-validation-for="SiteName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Quantity" class="control-label"></label>
+            <input asp-for="Quantity" class="form-control" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TransportAmount" class="control-label"></label>
+            <input asp-for="TransportAmount" class="form-control" />
+            <span asp-validation-for="TransportAmount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AdvanceBalance" class="control-label"></label>
+            <input asp-for="AdvanceBalance" class="form-control" />
+            <span asp-validation-for="AdvanceBalance" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PriceAmount" class="control-label"></label>
+            <input asp-for="PriceAmount" class="form-control" />
+            <span asp-validation-for="PriceAmount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="OrderStatusID" class="control-label"></label>
+            <input asp-for="OrderStatusID" class="form-control" />
+            <span asp-validation-for="OrderStatusID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="OrderStatusName" class="control-label"></label>
+            <input asp-for="OrderStatusName" class="form-control" />
+            <span asp-validation-for="OrderStatusName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>*@
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="OrderID" class="form-control" hidden />
+                <input asp-for="CustomerName" class="form-control" hidden />
+                <input asp-for="TransportAmount" class="form-control" hidden />
+                <input asp-for="AdvanceBalance" class="form-control" hidden />
+                @*<input asp-for="PriceAmount" class="form-control" hidden/>*@
+                <input asp-for="OrderStatusID" class="form-control" hidden/>
+                <input asp-for="OrderStatusName" class="form-control" hidden />
+            </div>
+            <div class="form-group">
+                <label asp-for="CID" class="control-label"></label>
+                <input asp-for="CID" class="form-control" id="CID" readonly />
+                <span asp-validation-for="CID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Site Name</label>
+                <select class="form-control" asp-for="SiteID"
+                        asp-items="@(new SelectList(ViewBag.ListOfSite, "SiteID", "SiteName"))"></select>
+                <span asp-validation-for="SiteID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="productName" class="control-label"></label>
+                <select asp-for="productName" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.ListOfProduct, "productName", "productName"))"></select>
+                <span asp-validation-for="productName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="button" id="btnCalculate" value="Calculate Order" class="btn btn-primary" />
+            </div>
+            <div class="form-group">
+                <label class="control-label"><p style="color:teal">Total Order Amount</p></label>
+                <input asp-for="PriceAmount" class="form-control" id="PriceAmount" name="PriceAmount" readonly />
+                @Html.ValidationMessageFor(model => model.PriceAmount, "", new { @class = "text-danger" })
+                <span asp-validation-for="PriceAmount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" id="btnsubmit" value="Place Order" class="btn btn-primary" />
+                <a asp-action="OrderDetails">Back to List</a>
+
+                <fieldset>
+                    <legend></legend>
+                    <ul>
+                        @if (ViewBag.requiredDetails == null)
+                        {
+                            Console.WriteLine("hhh");
+                            //your code
+                        }
+                        else
+                        {
+                            @foreach (var item in ViewBag.requiredDetails)
+                            {
+                                <li>
+
+                                    @item
+
+
+                                </li>
+                            }
+                        }
+                    </ul>
+                    @TempData["TotalOrderAmt"]
+
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnCalculate').click(function (e) {
+            //Serialize the form datas.
+            var valdata = $("#EditOrderForm").serialize();
+            var url = "/PlaceOrder/CalculateOrder";
+            $.get(url, valdata, function (data) {
+                $('#PriceAmount').val(data);
+            });
+        })
+
+    });
+    </script>
+}

@@ -1,0 +1,12 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Order Pending!";
+}
+
+<h1 class="text-danger">@ViewData["Title"]</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h3>Order from the Site "@ViewBag.SiteName" with Customer "@ViewBag.CustomerID" is still pending.</h3>
+    <h4>You cannot edit/delete the site.</h4>
+<div>
+    @Html.ActionLink("Ok", "RegisterSite", new { @class = "btn btn-primary" }) 
+</div>

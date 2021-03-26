@@ -9,76 +9,124 @@
 <p>
     <a class="btn btn-primary my-1" asp-action="ViewPlaceOrder" role="button"><i class="fas fa-plus mr-1"></i>Add New Order</a>
 </p>
-<table class="table table-hover" id="dataTable">
+@*<table class="table table-hover" id="dataTable">*@
+<table class="table table-hover">
     <thead>
         <tr>
-            <th>
+            <th class="hidden-row">
                 @Html.DisplayNameFor(model => model.OrderID)
             </th>
-            <th>
+            <th class="hidden-row">
                 @Html.DisplayNameFor(model => model.CID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.productName)
             </th>
-            <th>
+            <th class="hidden-row">
                 @Html.DisplayNameFor(model => model.SiteID)
             </th>
-
+            <th>
+                @Html.DisplayNameFor(model => model.SiteName)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.TransportAmount)
+            @Html.DisplayNameFor(model => model.TransportAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdvanceBalance)
+        </th>*@
+            @*<th>
+            @Html.DisplayNameFor(model => model.PriceAmount)
+        </th>*@
+            <th class="hidden-row">
+                @Html.DisplayNameFor(model => model.OrderStatusID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AdvanceBalance)
-            </th>*@
-            @*<th>
-                @Html.DisplayNameFor(model => model.PriceAmount)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.OrderStatusID)
+                @Html.DisplayNameFor(model => model.OrderStatusName)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
+    using (Html.BeginForm("CancelOrder", "PlaceOrder", new { OrderID = item.OrderID}))
+    {
         <tr>
-            <td>
+            <td class="hidden-row">
                 @Html.DisplayFor(modelItem => item.OrderID)
             </td>
-            <td>
+            <td class="hidden-row">
                 @Html.DisplayFor(modelItem => item.CID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.productName)
             </td>
-            <td>
+            <td class="hidden-row">
                 @Html.DisplayFor(modelItem => item.SiteID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
             @*<td>
-                @Html.DisplayFor(modelItem => item.TransportAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdvanceBalance)
-            </td>*@
+            @Html.DisplayFor(modelItem => item.TransportAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdvanceBalance)
+        </td>*@
             @*<td>
-                Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
-            </td>*@
-            <td>
+            Nu. @Html.DisplayFor(modelItem => item.PriceAmount)
+        </td>*@
+            <td class="hidden-row">
                 @Html.DisplayFor(modelItem => item.OrderStatusID)
             </td>
             <td>
-                @Html.ActionLink("Edit Order", "EditCustomerInfo", new { cid = item.CID }, new { @class = "btn btn-primary not-active" }) |
-                @Html.ActionLink("Generate Report", "GenerateReport", new { cid = item.CID, productName = item.productName }, new { @class = "btn btn-primary" }) |
-                <input type="submit" value="Cancel Order" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to delete site recode with ID= @item.CID')" />
+                @Html.DisplayFor(modelItem => item.OrderStatusName)
+            </td>
+            <td>
+                @if (item.OrderStatusID.Equals('P'))
+                {
+
+                    @Html.ActionLink("Edit", "EditOrderInfo", new { OrderID = item.OrderID }, new { @class = "btn btn-primary" }) 
+                 }
+                 else
+                  {
+                   <input type="button" value="Edit" class="btn btn-primary" disabled />
+                    }
+
+                | @Html.ActionLink("Generate Report", "GenerateReport", new { cid = item.CID, productName = item.productName }, new { @class = "btn btn-primary" }) |
+                @if (item.OrderStatusID.Equals('P'))
+                {
+
+                    <input type="submit" value="Cancel" class="btn btn-primary" onclick="return confirm('Are you sure you wanted to cancel this order with ID= @item.OrderID')" />
+                }
+                else
+                {
+                    <input type="submit" value="Cancel" class="btn btn-primary" disabled />
+                }
             </td>
         </tr>
+    }
 }
     </tbody>
 </table>
+<style>
+    .visible-row {
+        display: normal;
+    }
+
+    .hidden-row {
+        display: none;
+    }
+</style>

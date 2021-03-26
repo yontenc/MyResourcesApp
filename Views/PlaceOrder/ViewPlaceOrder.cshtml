@@ -54,24 +54,26 @@
                 <fieldset>
                     <legend></legend>
                     <ul>
-            @if (ViewBag.requiredDetails == null)
-            {
-                Console.WriteLine("hhh");
-                //your code
-            }
-            else
-            {
-                @foreach (var item in ViewBag.requiredDetails)
-                {
-                    <li>
+                        @if (ViewBag.requiredDetails == null)
+                        {
+                            Console.WriteLine("hhh");
+                            //your code
+                        }
+                        else
+                        {
+                            <p style="color:red">You don't have enough balance to order!</p>
+                            @foreach (var item in ViewBag.requiredDetails)
+                            {
 
-                        @item
+                                <li>
+
+                                    @item
 
 
-                    </li>
-                }
-            }
-        </ul>
+                                </li>
+                            }
+                        }
+                    </ul>
                     @*@TempData["Required"]*@
                    @TempData["TotalOrderAmt"]
 
@@ -84,7 +86,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="OrderDetails">Back to List</a>
 </div>
 
 @section Scripts {
@@ -94,7 +96,6 @@
         <script type="text/javascript">
     $(document).ready(function () {
         $('#CID').change(function () {
-            alert("hh")
             var url = '@Url.Content("~/")' + "PlaceOrder/GetSite";
             var ddlsource = "#CID";
             $.getJSON(url, { CID: $(ddlsource).val() }, function (data) {
